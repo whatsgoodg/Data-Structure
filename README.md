@@ -1,2 +1,6 @@
-# CPP language 
-This repo is about theories such as CPP basic grammar and Data structure & Algorithms. I'm hoping it'll help anyone who is having a hard time studyng CPP in uni or wherever.
+# 자료구조
+이 레포는 자료구조의 개념적 구현 코드를 저장할 공간입니다.    
+주석과 코멘트로 설명이 이루어지며 자료구조의 개념을 잘 모른다면 제 기술 블로그를 참고하시거나 다른 경로로 공부를 하고 보는게 좋습니다.    
+    
+코드의 순서는    
+  *
