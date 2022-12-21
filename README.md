@@ -63,4 +63,57 @@
 **`Multiply, Add and Divide(MAD)`**
 >* h_2(y) = (ay + b) Mod N(<u>a와 b는 음이 아닌 정수이며 a mod N != 0을 충족한다.</u>)
 ### Collision Handling
+#### Separate Chaining
+해시함수를 거쳐 나온 index가 중복되는 경우를 **`Collision(충돌)`**이라 칭한다. 
+이 충돌을 해결하기 위한 방법 중 하나가 **`Separate Chaining`**이다. 
+이는 중복된 index에 `list`를 가리키는 `포인터`를 저장하여 list로 중복되는 key를 가진 entry를 관리하는 방법이다.
+이는 최악의 경우 O(N)의 시간복잡도를 가진다.
+구현은 간단하지만 이는 추가적인 메모리가 필요하다는 것을 고려해야 한다.
+#### Open Addressing
+충돌이 일어났을 경우 entry를 다른 index에 저장하는 방법이다. 해시함수를 거친 index와 저장되는 index가 다르다.
+##### Example
+>* h(x) = x mod 13
+![image](https://user-images.githubusercontent.com/86244920/208910032-ebd324e7-ab97-4b64-946a-2db07507be7f.png)
+
+위의 이미지와 같이 18 mod 13 == 44 mod 13 일 경우 18 저장 이후 44에서 충돌이 발생한다. 이를 18의 다음 index에 저장하는 모습을 볼 수 있다.
+Open Addressing 방법을 사용한 해시 테이블을 순회하는 방법을 **`Linear Probing`**이라 부른다.
+##### 수도코드
+![image](https://user-images.githubusercontent.com/86244920/208910704-884a85b5-23ef-4873-b7fa-a05b6030a495.png)
+
+#### Linear Probing
+Open Addressing 방법을 사용한 table은 충돌이 일어나 중간에 삭제된 entry가 있는 경우
+삭제가 되었다는 표시를 테이블에 남겨야한다. 이를 **`AVAILABLE`**이라 칭한다.
+선형 탐색 중 AVAILABLE이 일어난 경우 **empty 또는 key를 찾을 때 까지** 탐색을 해야한다.
+충돌이 다중으로 일어나 찾고자 하는 key가 **테이블 뒷쪽**에 저장되어 있을 경우가 있기 때문이다.
+선형 탐색을 위한 **`ADT`**는 아래와 같다
+>* **`find(key)`**: cell의 h(k)에서 시작하여 선형탐색을 한다. 
+> 1. 찾고자하는 key가 발견되었을 경우.
+> 2. empty cell이 발견되었을 경우.
+> 3. 마지막 지점까지 모두 탐색한 경우(unsuccessful)
+
+> * **`put(key, value)`**: table에 entry를 삽입한다.
+> 1. 테이블이 꽉 찼을 경우 예외처리를 한다.
+> 2.  마지막 지점까지 모두 탐색한 경우 예외처리를 한다. 
+> 3. h(k)에서 시작하여 empty 또는 AVAILABLE cell이 발견된다면 entry를 삽입한다.
+
+> * **`erase(key)`**: key값과 일치하는 entry를 삭제한다.
+> 1. 마지막 시점까지 모두 탐색한 경우 예외처리를 한다.
+> 2. key값과 일치하는 entry를 찾은 경우, 삭제 후 AVAILABLE를 저장한다.
+
+### Double Hashing
+**`Double Hashing`**이란 추가의 해시함수를 **충돌**이 일어났을 경우에**만** 사용한다.
+예시로 **`h'(k)=q-(k mod q)(q < N and q is prime)`**, **`(i + j * h'(k)) mod N(for j = 0, 1, .. ,N-1)`**를 알아보자.
+>* 이중해시함수는 0을 가질 수 없다.
+>* N은 무조건 소수여야한다.(모든 cell을 탐색하기 위함)
+>* h`(k)는 1, 2, ..,q값을 가진다.
+
+#### Example
+![image](https://user-images.githubusercontent.com/86244920/208913309-bbc2022c-b732-4cc5-accb-ed2859f642ac.png)
+>* N = 13
+>* h(k) = k mod 13
+>* h'(k) = 7 - k mod 7 
+#### Cost
+>* **remove()**: O(N) => 모든 entry가 충돌이 일어났을 때
+>* **`load factor`**: n/N은 해시 테이블 performance에 영향을 끼친다. n은 entry의 개수이다.
+>* 나머진 사전의 경우와 같이 N개의 cell이 있으므로 **`O(N)`**의 시간복잡도를 가진다.
 ## Graph
