@@ -31,16 +31,14 @@
 >* _entry는 table의 index i=h(k)에 저장한다.
 
 해시함수는 대개 두 가지의 함수를 사용하여 mapping한다. 
->* `Hash Code`: **h_1: kets -> integers**
->* `Compression Function`: **h_2: integers -> [0, N-1]**
+>* **`Hash Code`**: **h_1: kets -> integers**
+>* **`Compression Function`**: **h_2: integers -> [0, N-1]**
 이렇게 두 번의 절차를 걸치는 이유는 key를 임의적으로 `분산`시키기 위함이다.
 **`Integer Cast`**
 >* 어느 종류의 key더라도 정수형태로 나타낼 수 있다.(bits)
->
 **`Component Sum`**
 >* key의 bits를 나누고 모두 고정된 크기로 나누고 모두 더하여 정수형태로 나타낸다.
 >* integer type의 bits 수보다 크거나 같은 고정된 크기의 numeric key에 적합하다. ex) long and double
-
 ### Hash Code Example
 **`polynomial accumulation`**의 직역은 다항식 형태의 축적이다.
 >* key의 bits를 고정된 크기의 다항식 형태(`a_0,a_1,,a_n-1`)로 나눈다.
