@@ -30,7 +30,7 @@
 >* **`insertion(i, e)`**: index i에 e를 삽입한다.    
 >![image](https://user-images.githubusercontent.com/86244920/208944542-22a4e452-7f69-4356-8a15-05b9e4f3f991.png)             
 >             
-위와 같이 **`right shift`**, 즉 삽입하는 자리부터 오른쪽으로 한칸씩 이동한다. 그러므로 **cost**는 `O(N)`이다.
+> 위와 같이 **`right shift`**, 즉 삽입하는 자리부터 오른쪽으로 한칸씩 이동한다. 그러므로 **cost**는 `O(N)`이다.
 >* **`remove(i)`**: index i의 원소를 삭제한다. 
 삭제하는 원소의 오른쪽 원소부터 왼쪽으로 한 칸씩 이동하는 **`left shift`**가 발생한다. 그러므로 **cost는** `O(N)`이다.
 >* **`at(i)`**: 배열의 index i의 원소를 반환한다. C++의 indexing은 주소를 이용하기 때문에 **cost**는 `O(1)`이다.
