@@ -51,9 +51,9 @@
 >* key의 bits를 나누고 모두 고정된 크기로 나누고 모두 더하여 정수형태로 나타낸다.
 >* integer type의 bits 수보다 크거나 같은 고정된 크기의 numeric key에 적합하다. ex) long and double
 ### Hash Code Example            
-**`polynomial accumulation`**의 직역은 다항식 형태의 축적이다.          
->* key의 bits를 고정된 크기의 다항식 형태(`a_0,a_1,,a_n-1`)로 나눈다.                    
->* 특정 함수로 다항식을 계산한다. `p(z) = a_0 + a_1*z + a_2*z^2 + .. + a_n-1 * z^n-1`             
+**`polynomial accumulation`** 의 직역은 다항식 형태의 축적이다.          
+>* key의 bits를 고정된 크기의 다항식 형태(**`a_0,a_1,,a_n-1`**)로 나눈다.                    
+>* 특정 함수로 다항식을 계산한다. **`p(z) = a_0 + a_1*z + a_2*z^2 + .. + a_n-1 * z^n-1`**             
 > 이 방법은 string key에 적합하다. <u>이 방법은 최대 6개의 충돌을 일으킨다.</u>             
 ### Compression FunctionH              
 정수화한 key를 해시함수를 사용하여 **index**를 만드는 과정이다.            
@@ -64,8 +64,8 @@
 >* h_2(y) = (ay + b) Mod N(<u>a와 b는 음이 아닌 정수이며 a mod N != 0을 충족한다.</u>)                 
 ### Collision Handling
 #### Separate Chaining
-해시함수를 거쳐 나온 index가 중복되는 경우를 **`Collision(충돌)`**이라 칭한다.              
-이 충돌을 해결하기 위한 방법 중 하나가 **`Separate Chaining`**이다.            
+해시함수를 거쳐 나온 index가 중복되는 경우를 **`Collision(충돌)`** 이라 칭한다.              
+이 충돌을 해결하기 위한 방법 중 하나가 **`Separate Chaining`** 이다.            
 이는 중복된 index에 `list`를 가리키는 `포인터`를 저장하여 list로 중복되는 key를 가진 entry를 관리하는 방법이다.             
 이는 최악의 경우 O(N)의 시간복잡도를 가진다.                     
 구현은 간단하지만 이는 추가적인 메모리가 필요하다는 것을 고려해야 한다.             
@@ -76,16 +76,16 @@
 ![image](https://user-images.githubusercontent.com/86244920/208910032-ebd324e7-ab97-4b64-946a-2db07507be7f.png)
 
 위의 이미지와 같이 18 mod 13 == 44 mod 13 일 경우 18 저장 이후 44에서 충돌이 발생한다. 이를 18의 다음 index에 저장하는 모습을 볼 수 있다.              
-Open Addressing 방법을 사용한 해시 테이블을 순회하는 방법을 **`Linear Probing`**이라 부른다.                   
+Open Addressing 방법을 사용한 해시 테이블을 순회하는 방법을 **`Linear Probing`** 이라 부른다.                   
 ##### 수도코드              
 ![image](https://user-images.githubusercontent.com/86244920/208910704-884a85b5-23ef-4873-b7fa-a05b6030a495.png)
 
 #### Linear Probing
 Open Addressing 방법을 사용한 table은 충돌이 일어나 중간에 삭제된 entry가 있는 경우            
-삭제가 되었다는 표시를 테이블에 남겨야한다. 이를 **`AVAILABLE`**이라 칭한다.                    
+삭제가 되었다는 표시를 테이블에 남겨야한다. 이를 **`AVAILABLE`** 이라 칭한다.                    
 선형 탐색 중 AVAILABLE이 일어난 경우 **empty 또는 key를 찾을 때 까지** 탐색을 해야한다.                
-충돌이 다중으로 일어나 찾고자 하는 key가 **테이블 뒷쪽**에 저장되어 있을 경우가 있기 때문이다.                
-선형 탐색을 위한 **`ADT`**는 아래와 같다               
+충돌이 다중으로 일어나 찾고자 하는 key가 **테이블 뒷쪽** 에 저장되어 있을 경우가 있기 때문이다.                
+선형 탐색을 위한 **`ADT`** 는 아래와 같다               
 
 >* **`find(key)`**: cell의 h(k)에서 시작하여 선형탐색을 한다.           
 > 1. 찾고자하는 key가 발견되었을 경우.
@@ -103,7 +103,7 @@ Open Addressing 방법을 사용한 table은 충돌이 일어나 중간에 삭�
            
 ### Double Hashing
 **`Double Hashing`이란 추가의 해시함수를 충돌**이 일어났을 경우에**만** 사용한다.           
-예시로 `h'(k)=q-(k mod q)(q < N and q is prime)`와 `(i + j * h'(k)) mod N(for j = 0, 1, .. ,N-1)`를 알아보자.                
+예시로 **`h'(k)=q-(k mod q)(q < N and q is prime)`** 와 **`(i + j * h'(k)) mod N(for j = 0, 1, .. ,N-1)`** 가 있다.               
 >* 이중해시함수는 0을 가질 수 없다.
 >* N은 무조건 소수여야한다.(모든 cell을 탐색하기 위함)
 >* h`(k)는 1, 2, ..,q값을 가진다.
