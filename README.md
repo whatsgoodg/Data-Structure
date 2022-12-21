@@ -13,7 +13,7 @@
 * 우선순위 큐
 * 힙
 * 이진 탐색 트리
-* 해시 테이블
+* [해시 테이블](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#hash-table)
 * 그래프 
 ## Array
 ## Singly Linked-List
