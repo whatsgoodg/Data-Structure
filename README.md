@@ -103,7 +103,7 @@ Open Addressing 방법을 사용한 table은 충돌이 일어나 중간에 삭�
 ### Double Hashing
 **`Double Hashing`이란 추가의 해시함수를 충돌**이 일어났을 경우에**만** 사용한다.
 예시로 **`h'(k)=q-(k mod q)(q < N and q is prime) 
-(i + j * h'(k)) mod N(for j = 0, 1, .. ,N-1)`**를 알아보자.
+\(i + j * h'(k)) mod N(for j = 0, 1, .. ,N-1)`**를 알아보자.
 >* 이중해시함수는 0을 가질 수 없다.
 >* N은 무조건 소수여야한다.(모든 cell을 탐색하기 위함)
 >* h`(k)는 1, 2, ..,q값을 가진다.
