@@ -23,8 +23,8 @@
 ## Heap
 ## Binary Search Tree
 ## Hash Table
-`Hash Table`이란 `Hash Function`을 이용하여 (key, value) 형태의 entry중 key를 특정 정수로 mapping하여 index를 관리하는 배열이다.([0, N-1])            
-해시 함수의 예시로 `h(x) = x mod N`가 있다. h(x)는 key x의 `Hash Value`라 부른다.             
+**`Hash Table`** 이란 **`Hash Function`** 을 이용하여 (key, value) 형태의 entry중 key를 특정 정수로 **mapping**하여 index를 관리하는 배열이다.([0, N-1])            
+해시 함수의 예시로 **`h(x) = x mod N`** 가 있다. h(x)는 key x의 **`Hash Value`** 라 부른다.             
 예를 들어, 긴 숫자를 가진 주민등록번호와 이에 대응되는 성명을 해시 테이블로 저장하는 경우를 보자.             
           
 ![image](https://user-images.githubusercontent.com/86244920/208908067-81bde8b0-cd97-4b51-bf56-22f7eeee2821.png)
