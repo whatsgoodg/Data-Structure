@@ -14,8 +14,26 @@
 * 힙
 * 이진 탐색 트리
 * [해시 테이블](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#hash-table)
-* 그래프 
-## Array
+* 그래프
+## ADT
+**`ADT`** (Abstract Data Types)란 자료구조의 **`추상화`** 이다. 이는 구현이 아니라 `기능`에 초점을 맞춘 것으로                
+`어떻게`가 아닌 **`무엇`** 을 수행하느냐이다. 예를 들어, Singly Linked-List는 배열과 포인터로 모두 구현 가능하다.             
+둘의 내부동작 방식은 엄연히 다르나, 구현된 기능은 두 구현 모두 동일한 동작을 수행할 수 있다.             
+## Array    
+**`배열`** 이란 같은 타입(`homogeneous`)의 data를 지니는 자료구조이다.             
+>* **`data type arrayname[N]`**의 형태로 구현되며 하나의 데이터 타입만을 가진다.      
+>* 0부터 N-1의 index를 가진다.
+>* size는 고정되어 있으며 변경할 수 없다.
+![image](https://user-images.githubusercontent.com/86244920/208943982-1415cf53-19b6-4e9e-9b27-d99819356652.png)
+
+### The Array ADT
+>* **`insertion(i, e)`**: index i에 e를 삽입한다. 
+![image](https://user-images.githubusercontent.com/86244920/208944542-22a4e452-7f69-4356-8a15-05b9e4f3f991.png)
+위와 같이 **`right shift`**, 즉 삽입하는 자리부터 오른쪽으로 한칸씩 이동한다. 그러므로 **cost**는 `O(N)`이다.
+>* **`remove(i)`**: index i의 원소를 삭제한다. 
+삭제하는 원소의 오른쪽 원소부터 왼쪽으로 한 칸씩 이동하는 **`left shift`**가 발생한다. 그러므로 **cost는** `O(N)`이다.
+>* **`at(i)`**: 배열의 index i의 원소를 반환한다. C++의 indexing은 주소를 이용하기 때문에 **cost**는 `O(1)`이다.
+
 ## Singly Linked-List
 ## Double Linked-List
 ## Tree
