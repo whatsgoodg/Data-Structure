@@ -3,7 +3,7 @@
     
 코드 순서
     
-* 배열
+* [배열](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#array)
 * 리스트(단일)
 * 스택
 * 큐
