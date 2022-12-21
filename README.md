@@ -21,7 +21,8 @@
 둘의 내부동작 방식은 엄연히 다르나, 구현된 기능은 두 구현 모두 동일한 동작을 수행할 수 있다.             
 ## Array    
 **`배열`** 이란 같은 타입(`homogeneous`)의 data를 지니는 자료구조이다.             
->* **`data type arrayname[N]`** 의 형태로 구현되며 하나의 데이터 타입만을 가진다.      
+>* **`data type arrayname[N]`** 의 형태로 구현되며 하나의 데이터 타입만을 가진다.    
+>* **`arrayname`** 은 첫 번째 원소의 **주소**를 가진다.   
 >* 0부터 N-1의 index를 가진다.
 >* size는 고정되어 있으며 변경할 수 없다.
 ![image](https://user-images.githubusercontent.com/86244920/208943982-1415cf53-19b6-4e9e-9b27-d99819356652.png)
