@@ -31,8 +31,8 @@
 >* _entry는 table의 index i=h(k)에 저장한다.
 
 해시함수는 대개 두 가지의 함수를 사용하여 mapping한다. 
->* `Hash Code`: **h_1: kets -> integers**
->* `Compression Function`: **h_2: integers -> [0, N-1]**
+>* **`Hash Code`**: **h_1: kets -> integers**
+>* **`Compression Function`**: **h_2: integers -> [0, N-1]**
 이렇게 두 번의 절차를 걸치는 이유는 key를 임의적으로 `분산`시키기 위함이다.
 **`Integer Cast`**
 >* 어느 종류의 key더라도 정수형태로 나타낼 수 있다.(bits)
