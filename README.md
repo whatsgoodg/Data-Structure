@@ -115,5 +115,5 @@ Open Addressing 방법을 사용한 table은 충돌이 일어나 중간에 삭�
 #### Cost
 >* **remove()**: O(N) => 모든 entry가 충돌이 일어났을 때
 >* **`load factor`**: n/N은 해시 테이블 performance에 영향을 끼친다. n은 entry의 개수이다.
->* 나머진 사전의 경우와 같이 N개의 cell이 있으므로 **`O(N\)`**의 시간복잡도를 가진다.
+>* 나머진 사전의 경우와 같이 N개의 cell이 있으므로 **O(N)**의 시간복잡도를 가진다.
 ## Graph
