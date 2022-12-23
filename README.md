@@ -42,10 +42,12 @@
 ## Singly Linked-List
 **`단일연결리스트`** 란 `Concrete Data Structure`로 **`node`** 라는 개념이 포함된다.                        
 `node`란 **element**와 **next**를 포함하는 하나의 **객체**이다.                                
-`element`란 node에 저장할 data이고, `next`란 다음 node의 주소를 가지는 `포인터`이다.                     
+`element`란 node에 저장할 data이고, `next`란 다음 node의 주소를 가지는 `포인터`이다.    
+                        
 ![image](https://user-images.githubusercontent.com/86244920/209289410-657f9ed2-2672-443c-ad3d-654256c80c26.png)            
                 
-위와 같은 형태를 node라 칭하며 `단일연결리스트`란 이 노드들의 집합을 뜻한다.                
+위와 같은 형태를 node라 칭하며 `단일연결리스트`란 이 노드들의 집합을 뜻한다.          
+                            
 ![image](https://user-images.githubusercontent.com/86244920/209289518-02b73de0-2274-4d0b-94a2-34ddb91b76e0.png)               
                           
 위와 같은 형태가 `단일연결리스트`이다.               
