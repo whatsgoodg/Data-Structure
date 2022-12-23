@@ -5,10 +5,10 @@
     
 * [배열](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#array)
 * 리스트(단일)
+* 리스트(이중)
+* 벡터
 * 스택
 * 큐
-* 벡터
-* 리스트(이중)
 * 트리
 * 우선순위 큐
 * 힙
@@ -35,13 +35,7 @@
 >* **`remove(i)`**: index i의 원소를 삭제한다. 
 삭제하는 원소의 오른쪽 원소부터 왼쪽으로 한 칸씩 이동하는 **`left shift`** 가 발생한다. 그러므로 **cost는** `O(N)`이다.
 >* **`at(i)`**: 배열의 index i의 원소를 반환한다. C++의 indexing은 주소를 이용하기 때문에 **cost**는 `O(1)`이다.
-
 ## Singly Linked-List
-## Double Linked-List
-## Tree
-## Priority Queue
-## Heap
-## Binary Search Tree
 ## Hash Table
 **`Hash Table`** 이란 **`Hash Function`** 을 이용하여 (key, value) 형태의 entry중 key를 특정 정수로 **mapping**하여 index를 관리하는 배열이다.([0, N-1])            
 해시 함수의 예시로 **`h(x) = x mod N`** 가 있다. h(x)는 key x의 **`Hash Value`** 라 부른다.             
