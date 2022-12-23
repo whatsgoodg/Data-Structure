@@ -18,8 +18,8 @@
 ## ADT
 **`ADT`** (Abstract Data Types)란 자료구조의 **`추상화`** 이다. 이는 구현이 아니라 `기능`에 초점을 맞춘 것으로                
 `어떻게`가 아닌 **`무엇`** 을 수행하느냐이다. 예를 들어, Stack은 배열과 리스트로 모두 구현 가능하다.             
-둘의 내부동작 방식은 엄연히 다르나, 구현된 기능은 두 구현 모두 동일한 동작을 수행할 수 있다. 
-이의 반대개념은 ***`CDT`*** 이다. 이는 `ADT`의 `구현`도 포함하고 있는 data type이다. 예를들어, `단일연결리스트`가 존재한다.
+둘의 내부동작 방식은 엄연히 다르나, 구현된 기능은 두 구현 모두 동일한 동작을 수행할 수 있다.                        
+이의 반대개념은 ***`CDT`*** 이다. 이는 `ADT`의 `구현`도 포함하고 있는 data type이다. 예를들어, `단일연결리스트`가 존재한다.            
 ## Array    
 **`배열`** 이란 같은 타입(`homogeneous`)의 data를 지니는 자료구조이다.             
 >* **`data type arrayname[N]`** 의 형태로 구현되며 하나의 데이터 타입만을 가진다.~~C~~
@@ -37,6 +37,34 @@
 삭제하는 원소의 오른쪽 원소부터 왼쪽으로 한 칸씩 이동하는 **`left shift`** 가 발생한다. 그러므로 **cost는** `O(N)`이다.
 >* **`at(i)`**: 배열의 index i의 원소를 반환한다. C++의 indexing은 주소를 이용하기 때문에 **cost**는 `O(1)`이다.
 ## Singly Linked-List
+**`단일연결리스트`** 란 `Concrete Data Structure`로 **`node`** 라는 개념이 포함된다.                        
+`node`란 **element**와 **next**를 포함하는 하나의 **객체**이다.                                
+`element`란 node에 저장할 data이고, `next`란 다음 node의 주소를 가지는 `포인터`이다.                     
+![image](https://user-images.githubusercontent.com/86244920/209289410-657f9ed2-2672-443c-ad3d-654256c80c26.png)                
+위와 같은 형태를 node라 칭하며 `단일연결리스트`란 이 노드들의 집합을 뜻한다.                
+![image](https://user-images.githubusercontent.com/86244920/209289518-02b73de0-2274-4d0b-94a2-34ddb91b76e0.png)               
+위와 같은 형태가 `단일연결리스트`이다.               
+단일연결리스트는 맨 앞과 뒤를 가리키는 포인터 `head`와 `tail`을 가진다.                  
+### ADT
+단일연결리스트의 `ADT`는 아래와 같다.              
+**`addFront(element)`**
+>1. 새로운 노드를 할당하고, next를 head로 업데이트 한다.
+>2. head 포인터를 새로운 노드로 업데이트 한다.
+>3. Cost: `O(1)`
+           
+**`removeFront()`**
+>1. head 포인터를 next node의 주소로 업데이트 한다.
+>2. 기존의 head 노드를 할당해제 한다.
+>3. Cost: `O(1)`
+              
+**`addTail()`**
+>1. 새로운 노드를 할당하고, tail의 next를 업데이트 한다.
+>2. 새로운 노드의 next를 NULL로 초기화하고 tail을 새로운 노드로 업데이트한다.
+>3. Cost: `O(1)`
+                     
+</u>중간삽입, 마지막 노드 삭제 등은 **선형시간** 시간복잡도를 가지기 때문에 효율적이지 않다.                
+이를 해결하기 위해 **`prev`** (이전 노드를 가리키는 포인터)를 추가한 **`이중연결리스트`** 를 알아보자</u>                      
+
 
 ## Hash Table
 **`Hash Table`** 이란 **`Hash Function`** 을 이용하여 (key, value) 형태의 entry중 key를 특정 정수로 **mapping**하여 index를 관리하는 배열이다.([0, N-1])            
@@ -115,8 +143,8 @@ Open Addressing 방법을 사용한 table은 충돌이 일어나 중간에 삭�
             
 > * **`erase(key)`**: key값과 일치하는 entry를 삭제한다.
 > 1. 마지막 시점까지 모두 탐색한 경우 예외처리를 한다.
-> 2. key값과 일치하는 entry를 찾은 경우, 삭제 후 AVAILABLE를 저장한다.
-           
+> 2. key값과 일치하는 entry를 찾은 경우, 삭제 후 AVAILABLE를 저장한다.        
+                      
 ### Double Hashing
 **`Double Hashing`이란 추가의 해시함수를 충돌**이 일어났을 경우에**만** 사용한다.           
 예시로 **`h'(k)=q-(k mod q)(q < N and q is prime)`** 와 **`(i + j * h'(k)) mod N(for j = 0, 1, .. ,N-1)`** 가 있다.               
