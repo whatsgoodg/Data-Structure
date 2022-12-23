@@ -4,8 +4,8 @@
 코드 순서
     
 * [배열](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#array)
-* 리스트(단일)
-* 리스트(이중)
+* [단일연결리스트](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#singly-linked-list)
+* [이중연결리스트]()
 * 벡터
 * 스택
 * 큐
