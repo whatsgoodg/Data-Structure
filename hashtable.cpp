@@ -100,6 +100,6 @@ public:
 		for (int i = 0; i < capacity; i++) {
 			if (table[i].valid == OCCUP) cnt++;
 		}
-		return cnt;
+		return cnt; 
 	}
 };
