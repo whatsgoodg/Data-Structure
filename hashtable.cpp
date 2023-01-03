@@ -20,7 +20,7 @@ using namespace std;
 struct entry {
 	int key; 
 	string value;
-	int valid; //0, 1, 2
+	int valid; //table의 status
 
 	entry() {
 		key = 0;
