@@ -6,9 +6,9 @@
 * [배열](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#array)
 * [단일연결리스트](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#singly-linked-list)
 * [스택](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#stack)
-* 큐
-* [이중연결리스트]()
+* [큐](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#queue)
 * [벡터]()
+* [이중연결리스트]()
 * [우선순위 큐]()
 * [트리]()
 * [힙]()
