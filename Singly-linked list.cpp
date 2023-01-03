@@ -3,8 +3,8 @@ using namespace std;
 // delete 처리 x
 class Node {
 private:
-	int elem;
-	Node* next;
+	int elem; // 데이터
+	Node* next; // 다음 노드를 가리키는 포인터
 	friend class Slist;
 public:
 	Node(int data) {
@@ -15,15 +15,15 @@ public:
 
 class Slist {
 private:
-	Node* tail;
-	Node* head;
+	Node* tail; // 맨 마지막 노드
+	Node* head; // 맨 처음 노드
 public:
 	Slist() {
 		tail = NULL;
 		head = NULL;
 	}
 	bool empty() { return tail == NULL && head == NULL; }
-	void print() {
+	void print() { // 모든 노드 출력
 		if (empty()) {
 			cout << "empty" << endl;
 			return;
@@ -35,7 +35,7 @@ public:
 		}
 		cout << cur_node->elem << endl;
 	}
-	int list_size() {
+	int list_size() { // 리스트 크기
 		int count = 0;
 		if (empty()) {
 			cout << count << endl;
