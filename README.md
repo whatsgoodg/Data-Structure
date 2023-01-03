@@ -102,8 +102,8 @@ stack의 구현은 `배열`을 사용하여 굉장히 간단하게 할 수 있�
 >* size(), empty() 
 >* 모든 연산의 시간 복잡도는 `O(1)`이다.             
                   
-Stack 구현에 있어 가장 중요한 점은 top 원소를 가리키는 **`포인터`** 이다.        
-배열로 구현되기 때문에 크기가 한정되어 있기에 **예외처리**가 필요하다.       
+Stack 구현에 있어 가장 중요한 점은 top 원소를 가리키는 **`포인터`** 이다.         
+배열로 구현되기 때문에 크기가 한정되어 있기에 **예외처리**가 필요하다.           
 ~~Stack의 응용은 사칙연산, 괄호 매칭이 있다.~~                  
                 
 ## 구현
@@ -150,8 +150,8 @@ void dequeue(){
 ```                
 `enqueue`와 동일하게 f 포인터를 한 칸 옮기기만 하면 된다. 똑같이 인덱스를 벗어날 시, 0으로 돌아간다.(**환형 큐**)    
 
-Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**가 필요하다.
-`Queue`의 **`응용`** 은 그래프 자료구조의 **BFS** 구현과, [**Round Robin Scheduler**](https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9A%B4%EB%93%9C_%EB%A1%9C%EB%B9%88_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81)에 사용된다.   
+Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**가 필요하다.               
+`Queue`의 **`응용`** 은 그래프 자료구조의 **BFS** 구현과, [**Round Robin Scheduler**](https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9A%B4%EB%93%9C_%EB%A1%9C%EB%B9%88_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81) 등이 있다.          
 ## 구현 
 [**소스코드**](https://github.com/whatsgoodg/Data-Structure/blob/main/queue.cpp)
 
