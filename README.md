@@ -76,8 +76,10 @@
 >3. Cost: `O(1)`
                        
 </u>중간삽입, 마지막 노드 삭제 등은 **선형시간** 시간복잡도를 가지기 때문에 효율적이지 않다.                
-이를 해결하기 위해 **`prev`** (이전 노드를 가리키는 포인터)를 추가한 **`이중연결리스트`** 를 알아보자</u>                      
-       
+이를 해결하기 위해 **`prev`** (이전 노드를 가리키는 포인터)를 추가한 **`이중연결리스트`** 를 알아보자</u> 
+## 구현
+[**소스코드**](https://github.com/whatsgoodg/Data-Structure/blob/main/singly-linked%20list.cpp)               
+           
 # Stack
 **`Stack`** 이란 **`LIFO`** (last-in first-out) 방식의 자료구조이다. 쉽게 말해 데이터가 **쌓이는** 형태의 자료구조이다.     
 예를 들어, C++의 **`run-time stack`** 을 알아보자.         
@@ -104,6 +106,9 @@ Stack 구현에 있어 가장 중요한 점은 top 원소를 가리키는 **`포
 배열로 구현되기 때문에 크기가 한정되어 있기에 **예외처리**가 필요하다.       
 ~~Stack의 응용은 사칙연산, 괄호 매칭이 있다.~~                  
                 
+## 구현
+[**소스코드**](https://github.com/whatsgoodg/Data-Structure/blob/main/stack.cpp)                  
+                   
 # Queue             
 **`Queue`** 란 Stack과 조금 다른 자료구조이다.                    
 **`FIFO`** (first-in first-out)방식으로 동작하며 맨 처음 들어온 데이터가 가장 먼저 나간다.               
@@ -146,7 +151,9 @@ void dequeue(){
 `enqueue`와 동일하게 f 포인터를 한 칸 옮기기만 하면 된다. 똑같이 인덱스를 벗어날 시, 0으로 돌아간다.(**환형 큐**)    
 
 Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**가 필요하다.
-`Queue`의 **`응용`** 은 그래프 자료구조의 **BFS** 구현과, [**Round Robin Scheduler**](https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9A%B4%EB%93%9C_%EB%A1%9C%EB%B9%88_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81)에 사용된다.           
+`Queue`의 **`응용`** 은 그래프 자료구조의 **BFS** 구현과, [**Round Robin Scheduler**](https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9A%B4%EB%93%9C_%EB%A1%9C%EB%B9%88_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81)에 사용된다.   
+## 구현 
+[**소스코드**](https://github.com/whatsgoodg/Data-Structure/blob/main/queue.cpp)
 
                                     
 # Hash Table
@@ -208,7 +215,7 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 ![image](https://user-images.githubusercontent.com/86244920/208910032-ebd324e7-ab97-4b64-946a-2db07507be7f.png)                         
                         
 위의 이미지와 같이 18 mod 13 == 44 mod 13 일 경우 18 저장 이후 44에서 충돌이 발생한다. 이를 18의 다음 index에 저장하는 모습을 볼 수 있다.               
-Open Addressing 방법을 사용한 해시 테이블을 순회하는 방법을 **`Linear Probing`** 이라 부른다.                   
+Open Addressing 방법을 사용한 해시 테이블을 순회하는 방법을 **`Linear Probing`** 이라 부른다.    
 #### 수도코드               
                          
 ![image](https://user-images.githubusercontent.com/86244920/208910704-884a85b5-23ef-4873-b7fa-a05b6030a495.png)                 
@@ -232,8 +239,11 @@ Open Addressing 방법을 사용한 table은 충돌이 일어나 중간에 삭�
              
 > * **`erase(key)`**: key값과 일치하는 entry를 삭제한다.
 > 1. 마지막 시점까지 모두 탐색한 경우 예외처리를 한다.
-> 2. key값과 일치하는 entry를 찾은 경우, 삭제 후 AVAILABLE를 저장한다.        
-                       
+> 2. key값과 일치하는 entry를 찾은 경우, 삭제 후 AVAILABLE를 저장한다.       
+         
+#### 구현
+[**소스코드**](https://github.com/whatsgoodg/Data-Structure/blob/main/hashtable.cpp)          
+                     
 ### Double Hashing
 **`Double Hashing`이란 추가의 해시함수를 충돌**이 일어났을 경우에**만** 사용한다.           
 예시로 **`h'(k)=q-(k mod q)(q < N and q is prime)`** 와 **`(i + j * h'(k)) mod N(for j = 0, 1, .. ,N-1)`** 가 있다.               
@@ -247,6 +257,9 @@ Open Addressing 방법을 사용한 table은 충돌이 일어나 중간에 삭�
 >* h(k) = k mod 13
 >* h'(k) = 7 - k mod 7 
                         
+#### 구현
+[**소스코드**](https://github.com/whatsgoodg/Data-Structure/blob/main/hashtable2.cpp)                
+                    
 ### Cost
 >* **remove()**: `O(N)` => 모든 entry가 충돌이 일어났을 때            
 >* **`load factor`**: n/N은 해시 테이블 performance에 영향을 끼친다. n은 entry의 개수이다.            
