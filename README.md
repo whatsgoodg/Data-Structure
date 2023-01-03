@@ -15,7 +15,7 @@
 * [이진 탐색 트리]()
 * [해시 테이블](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#hash-table)
 * [그래프]()
-## ADT
+# ADT
 **`ADT`** (Abstract Data Types)란 자료구조의 **`추상화`** 이다. 이는 구현이 아니라 `기능`에 초점을 맞춘 것으로                
 `어떻게`가 아닌 **`무엇`** 을 수행하느냐이다. 예를 들어, Stack은 배열과 리스트로 모두 구현 가능하다.             
 둘의 내부동작 방식은 엄연히 다르나, 구현된 기능은 두 구현 모두 동일한 동작을 수행할 수 있다.                        
@@ -24,7 +24,7 @@
                                            
                                               
                                               
-## Array    
+# Array    
 **`배열`** 이란 같은 타입(`homogeneous`)의 data를 지니는 자료구조이다.             
 >* **`data type arrayname[N]`** 의 형태로 구현되며 하나의 데이터 타입만을 가진다.~~C~~
 >* **`arrayname`** 은 첫 번째 원소의 **주소**를 가진다.~~C~~ 
@@ -32,7 +32,7 @@
 >* size는 고정되어 있으며 변경할 수 없다.
 ![image](https://user-images.githubusercontent.com/86244920/208943982-1415cf53-19b6-4e9e-9b27-d99819356652.png)
                          
-### The Array ADT
+## The Array ADT
 >* **`insertion(i, e)`**: index i에 e를 삽입한다.    
 >![image](https://user-images.githubusercontent.com/86244920/208944542-22a4e452-7f69-4356-8a15-05b9e4f3f991.png)             
 >             
@@ -42,7 +42,7 @@
 >* **`at(i)`**: 배열의 index i의 원소를 반환한다. C++의 indexing은 주소를 이용하기 때문에 **cost**는 `O(1)`이다.
                                    
                          
-## Singly Linked-List
+# Singly Linked-List
 **`단일연결리스트`** 란 `Concrete Data Structure`로 **`node`** 라는 개념이 포함된다.                        
 `node`란 **element**와 **next**를 포함하는 하나의 **객체**이다.                                
 `element`란 node에 저장할 data이고, `next`란 다음 node의 주소를 가지는 `포인터`이다.    
@@ -56,7 +56,7 @@
 위와 같은 형태가 `단일연결리스트`이다.               
 단일연결리스트는 맨 앞과 뒤를 가리키는 포인터 `head`와 `tail`을 가진다.        
                       
-### ADT
+## ADT
 단일연결리스트의 `ADT`는 아래와 같다.              
 **`addFront(element)`**
 >1. 새로운 노드를 할당하고, next를 head로 업데이트 한다.
@@ -76,7 +76,7 @@
 </u>중간삽입, 마지막 노드 삭제 등은 **선형시간** 시간복잡도를 가지기 때문에 효율적이지 않다.                
 이를 해결하기 위해 **`prev`** (이전 노드를 가리키는 포인터)를 추가한 **`이중연결리스트`** 를 알아보자</u>                      
        
-## Stack
+# Stack
 **`Stack`** 이란 **`LIFO`** (last-in first-out) 방식의 자료구조이다. 쉽게 말해 데이터가 **쌓이는** 형태의 자료구조이다.     
 예를 들어, C++의 **`run-time stack`** 을 알아보자.         
                 
@@ -102,12 +102,12 @@ Stack 구현에 있어 가장 중요한 점은 top 원소를 가리키는 **`포
 배열로 구현되기 때문에 크기가 한정되어 있기에 **예외처리**가 필요하다.       
 ~~Stack의 응용은 사칙연산, 괄호 매칭이 있다.~~                  
                 
-## Queue             
+# Queue             
 **`Queue`** 란 Stack과 조금 다른 자료구조이다.                    
 **`FIFO`** (first-in first-out)방식으로 동작하며 맨 처음 들어온 데이터가 가장 먼저 나간다.               
 그래서 Queue(line)이다. 버스정류장의 줄을 생각해보면 된다.                   
             
-### ADT           
+## ADT           
 >* enqueue(value): 값을 큐에 저장한다.
 >* dequeue(): 가장 먼저 저장된 값을 삭제한다.
 >* front(): 가장 먼저 저장된 값을 반환한다.
@@ -147,7 +147,7 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 `Queue`의 **`응용`** 은 그래프 자료구조의 **BFS** 구현과, [**Round Robin Scheduler**](https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9A%B4%EB%93%9C_%EB%A1%9C%EB%B9%88_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81)에 사용된다.           
 
                                     
-## Hash Table
+# Hash Table
 **`Hash Table`** 이란 **`Hash Function`** 을 이용하여 (key, value) 형태의 entry중 key를 특정 정수로 **mapping**하여 index를 관리하는 배열이다.([0, N-1])            
 해시 함수의 예시로 **`h(x) = x mod N`** 가 있다. h(x)는 key x의 **`Hash Value`** 라 부른다.             
 예를 들어, 긴 숫자를 가진 주민등록번호와 이에 대응되는 성명을 해시 테이블로 저장하는 경우를 보자.             
@@ -176,13 +176,13 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 >* key의 bits를 나누고 모두 고정된 크기로 나누고 모두 더하여 정수형태로 나타낸다.
 >* integer type의 bits 수보다 크거나 같은 고정된 크기의 numeric key에 적합하다. ex) long and double
                         
-### Hash Code Example            
+## Hash Code Example            
 **`polynomial accumulation`** 의 직역은 다항식 형태의 축적이다.          
 >* key의 bits를 고정된 크기의 다항식 형태(**`a_0,a_1,,a_n-1`**)로 나눈다.                    
 >* 특정 함수로 다항식을 계산한다. **`p(z) = a_0 + a_1*z + a_2*z^2 + .. + a_n-1 * z^n-1`**             
 > 이 방법은 string key에 적합하다. <u>이 방법은 최대 6개의 충돌을 일으킨다.</u>             
                     
-### Compression FunctionH              
+## Compression FunctionH              
 정수화한 key를 해시함수를 사용하여 **index**를 만드는 과정이다.            
 간단한 해시함수를 소개한다.                
 **`Division`**                 
@@ -190,28 +190,28 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 **`Multiply, Add and Divide(MAD)`**              
 >* h_2(y) = (ay + b) Mod N(<u>a와 b는 음이 아닌 정수이며 a mod N != 0을 충족한다.</u>)                 
                       
-### Collision Handling
-#### Separate Chaining
+## Collision Handling
+### Separate Chaining
 해시함수를 거쳐 나온 index가 중복되는 경우를 **`Collision(충돌)`** 이라 칭한다.              
 이 충돌을 해결하기 위한 방법 중 하나가 **`Separate Chaining`** 이다.            
 이는 중복된 index에 `list`를 가리키는 `포인터`를 저장하여 list로 중복되는 key를 가진 entry를 관리하는 방법이다.             
 이는 최악의 경우 O(N)의 시간복잡도를 가진다.                     
 구현은 간단하지만 이는 추가적인 메모리가 필요하다는 것을 고려해야 한다.             
                     
-#### Open Addressing                
+### Open Addressing                
 충돌이 일어났을 경우 entry를 다른 index에 저장하는 방법이다. 해시함수를 거친 index와 저장되는 index가 다르다.               
                
-##### Example
+#### Example
 >* h(x) = x mod 13                         
 ![image](https://user-images.githubusercontent.com/86244920/208910032-ebd324e7-ab97-4b64-946a-2db07507be7f.png)                         
                         
 위의 이미지와 같이 18 mod 13 == 44 mod 13 일 경우 18 저장 이후 44에서 충돌이 발생한다. 이를 18의 다음 index에 저장하는 모습을 볼 수 있다.               
 Open Addressing 방법을 사용한 해시 테이블을 순회하는 방법을 **`Linear Probing`** 이라 부른다.                   
-##### 수도코드               
+#### 수도코드               
                          
 ![image](https://user-images.githubusercontent.com/86244920/208910704-884a85b5-23ef-4873-b7fa-a05b6030a495.png)                 
                          
-#### Linear Probing
+### Linear Probing
 Open Addressing 방법을 사용한 table은 충돌이 일어나 중간에 삭제된 entry가 있는 경우             
 삭제가 되었다는 표시를 테이블에 남겨야한다. 이를 **`AVAILABLE`** 이라 칭한다.                    
 선형 탐색 중 AVAILABLE이 일어난 경우 **empty 또는 key를 찾을 때 까지** 탐색을 해야한다.                
@@ -245,7 +245,7 @@ Open Addressing 방법을 사용한 table은 충돌이 일어나 중간에 삭�
 >* h(k) = k mod 13
 >* h'(k) = 7 - k mod 7 
                         
-#### Cost
+### Cost
 >* **remove()**: `O(N)` => 모든 entry가 충돌이 일어났을 때            
 >* **`load factor`**: n/N은 해시 테이블 performance에 영향을 끼친다. n은 entry의 개수이다.            
 >* 나머진 사전의 경우와 같이 N개의 cell이 있으므로 `O(N)`의 시간복잡도를 가진다.           
