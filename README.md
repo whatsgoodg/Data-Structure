@@ -40,8 +40,10 @@
 >* **`remove(i)`**: index i의 원소를 삭제한다. 
 삭제하는 원소의 오른쪽 원소부터 왼쪽으로 한 칸씩 이동하는 **`left shift`** 가 발생한다. 그러므로 **cost는** `O(N)`이다.
 >* **`at(i)`**: 배열의 index i의 원소를 반환한다. C++의 indexing은 주소를 이용하기 때문에 **cost**는 `O(1)`이다.
-                                   
-                         
+                                    
+### 구현              
+[**소스코드**](https://github.com/whatsgoodg/Data-Structure/blob/main/array.cpp)                  
+                          
 # Singly Linked-List
 **`단일연결리스트`** 란 `Concrete Data Structure`로 **`node`** 라는 개념이 포함된다.                        
 `node`란 **element**와 **next**를 포함하는 하나의 **객체**이다.                                
