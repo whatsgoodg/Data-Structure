@@ -5,16 +5,16 @@
     
 * [배열](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#array)
 * [단일연결리스트](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#singly-linked-list)
-* [이중연결리스트]()
-* 벡터
-* 스택
+* [스택]()
 * 큐
-* 트리
-* 우선순위 큐
-* 힙
-* 이진 탐색 트리
+* [이중연결리스트]()
+* [벡터]()
+* [우선순위 큐]()
+* [트리]()
+* [힙]()
+* [이진 탐색 트리]()
 * [해시 테이블](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#hash-table)
-* 그래프
+* [그래프]()
 ## ADT
 **`ADT`** (Abstract Data Types)란 자료구조의 **`추상화`** 이다. 이는 구현이 아니라 `기능`에 초점을 맞춘 것으로                
 `어떻게`가 아닌 **`무엇`** 을 수행하느냐이다. 예를 들어, Stack은 배열과 리스트로 모두 구현 가능하다.             
@@ -75,7 +75,77 @@
                        
 </u>중간삽입, 마지막 노드 삭제 등은 **선형시간** 시간복잡도를 가지기 때문에 효율적이지 않다.                
 이를 해결하기 위해 **`prev`** (이전 노드를 가리키는 포인터)를 추가한 **`이중연결리스트`** 를 알아보자</u>                      
-                                 
+       
+## Stack
+**`Stack`** 이란 **`LIFO`** (last-in first-out) 방식의 자료구조이다. 쉽게 말해 데이터가 **쌓이는** 형태의 자료구조이다.     
+예를 들어, C++의 **`run-time stack`** 을 알아보자.         
+                
+![image](https://user-images.githubusercontent.com/86244920/210340171-ae4a9556-9ccd-4c27-b5b8-5a643857771e.png)         
+            
+```cpp
+void bar() {}
+void foo() { bar(); }
+int main() { foo(); }
+```
+대략적으로 위와 같은 함수 호출 위의 이미지이다. **main()->foo()->bar()** 순서로 함수가 호출되고 반대 순서로 종료된다.        
+이는 **가장 늦게** 호출된 함수(last-in)가 **가장 먼저** 종료(first-out)되는 Stack의 특징에 적합하다.              
+stack의 구현은 `배열`을 사용하여 굉장히 간단하게 할 수 있다.               
+               
+## ADT             
+>* push(value): 값을 stack에 저장한다.
+>* pop(): 가장 늦게 저장된 값을 삭제한다. 
+>* top(): 가장 늦게 저장된 값을 반환한다.
+>* size(), empty() 
+>* 모든 연산의 시간 복잡도는 `O(1)`이다.             
+                  
+Stack 구현에 있어 가장 중요한 점은 top 원소를 가리키는 **`포인터`** 이다.        
+배열로 구현되기 때문에 크기가 한정되어 있기에 **예외처리**가 필요하다.       
+~~Stack의 응용은 사칙연산, 괄호 매칭이 있다.~~                  
+                
+## Queue             
+**`Queue`** 란 Stack과 조금 다른 자료구조이다.                    
+**`FIFO`** (first-in first-out)방식으로 동작하며 맨 처음 들어온 데이터가 가장 먼저 나간다.               
+그래서 Queue(line)이다. 버스정류장의 줄을 생각해보면 된다.                   
+            
+### ADT           
+>* enqueue(value): 값을 큐에 저장한다.
+>* dequeue(): 가장 먼저 저장된 값을 삭제한다.
+>* front(): 가장 먼저 저장된 값을 반환한다.
+>* size(), empty()
+>* 모든 연산의 시간 복잡도는 `O(1)`이다.
+              
+Stack과 마찬가지로 배열로 구현이 가능하며, 맨 앞과 뒤를 가리키는 두 가지의 **`포인터`** 가 필요하다.            
+`enqueue`와 `dequeue`에 있어서, **mod 연산** 을 사용한다. 이는 **`환형 큐`** 를 구현하기 위함이다.            
+만약 삽입과, 삭제를 반복한다면 맨 앞을 가리키는 포인터가 뒤로 이동할 것이다.            
+그냥 포인터가 **뒤로** 움직이는 방식으로 구현한다면 삭제된 이후 배열의 공간은 사용되지 않아 **메모리 누수**가 일어난다.             
+이를 방지하기 위해 두 개의 포인터가 큐를 **도는 것**처럼 구현한다.            
+![image](https://user-images.githubusercontent.com/86244920/210345495-bd4ec3a7-a15b-4685-adf6-4f6341b1901b.png)           
+                 
+위의 이미지와 같이 f,r 포인터가 움직이며 삽입 삭제를 수행한다.     
+              
+**`enqueue`** 의 C++ 구현은 아래와 같다.(예외처리x)             
+```cpp
+void enqueue(int val){
+    arr[r] = val;
+    r = (r + 1) % N;
+    n++; //size n
+}
+```
+위의 코드를 보면 알 수 있듯이, 두 포인터는 index 0에서 시작하여, r에 삽입을 하고 r을 한 칸 옮기는 방식으로 수행한다.               
+r이 인덱스를 벗어날 경우 0으로 돌아간다.(**환형 큐**)              
+                 
+**`dequeue`** 구현(예외처리X)
+```cpp
+void dequeue(){
+    f = (f + 1) % N;
+    n++; //size n
+}
+```                
+`enqueue`와 동일하게 f 포인터를 한 칸 옮기기만 하면 된다. 똑같이 인덱스를 벗어날 시, 0으로 돌아간다.(**환형 큐**)    
+
+Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**가 필요하다.
+`Queue`의 **`응용`** 은 그래프 자료구조의 **BFS** 구현과, [**Round Robin Scheduler**](https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9A%B4%EB%93%9C_%EB%A1%9C%EB%B9%88_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81)에 사용된다.           
+
                                     
 ## Hash Table
 **`Hash Table`** 이란 **`Hash Function`** 을 이용하여 (key, value) 형태의 entry중 key를 특정 정수로 **mapping**하여 index를 관리하는 배열이다.([0, N-1])            
