@@ -11,8 +11,8 @@
 * [이중연결리스트]()
 * [우선순위 큐]()
 * [트리]()
-* [힙]()
 * [이진 탐색 트리]()
+* [힙]()
 * [해시 테이블](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#hash-table)
 * [그래프]()
 # ADT
