@@ -407,9 +407,9 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 # AVL Tree
 **`AVL Tree`** 란 **`Balanced Binary Search Tree`** 이다. 모든 Subtree의 height가 **최대 1**까지 차이나는 트리이다.            
 AVL Tree는 이진 탐색 트리 중, height가 **어떠한 상황**에서도 **log n**이 보장되는 Tree이다. ~~증명은 하지 않는다.~~    
-위에서 본 h가 n인 경우의 이진 탐색 트리는 `선형 자료구조`인 리스트와 다를게 없다.              
+위에서 본 h가 n인 경우의 이진 탐색 트리는 `선형 자료구조`인 리스트와 다를게 없다.               
 노드가 key가 오름차순으로 이진 탐색 트리에 삽입될 경우, 이와 같은 상황이 발생할 수 있다.                 
-이를 해결하기 위해 `AVL tree'는 삽입, 삭제가 일어날 때마다, height를 log n으로 유지하기 위해 **`Restructuring`** 이 필요하다.           
+이를 해결하기 위해 `AVL tree' 는 삽입, 삭제가 일어날 때마다, height를 log n으로 유지하기 위해 **`Restructuring`** 이 필요하다.           
 **C++의 이진 탐색 트리는 이와 비슷한 레드 블랙 트리로 구현되어 있다.**                 
 <br><br>
 ## Insertion  
@@ -452,8 +452,9 @@ a와 c가 각각 b의 왼쪽, 오른쪽 subtree가 된다.
 
 ## Performance
 >* find: **`O(log n)`**
->* insert: **`O(log n)`**(restructuring도 같다.)
->* erase: **`O(log n)`**(restructuring도 같다.)
+>* insert: **`O(log n)`**
+>* erase: **`O(log n)`**
+>* Restructuring: **`O(log n)`**
              
 <br><br><br>
 
