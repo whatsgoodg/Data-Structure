@@ -271,7 +271,7 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 ![image](https://user-images.githubusercontent.com/86244920/210505159-fad48ea9-3183-44cf-bac6-422748e5ebd2.png)
 
 ## ADT
-ADT는 기존 tree에서 **`Node p.left()`** , **Node p.right()** 가 추가된다. 각각 특정 노드의 왼쪽, 오른쪽 자식을 반환한다.           
+ADT는 기존 tree에서 **`Node p.left()`** , **`Node p.right()`** 가 추가된다. 각각 특정 노드의 왼쪽, 오른쪽 자식을 반환한다.           
  
 ## Inorder Traversal
 **`Inorder Traversal`** 이란 특정노드를 기준으로 왼쪽 자식 이후, 오른쪽 자식 이전에 탐색하는 것을 의미한다.      
