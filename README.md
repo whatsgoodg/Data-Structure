@@ -350,38 +350,46 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 >* ![image](https://user-images.githubusercontent.com/86244920/210522821-d9248771-07cf-45fc-9c05-c1f794d2c9f5.png)             
 >* **insert(5)**
 <br>
+                 
 ## Deletion
-**자식 노드가 한 개일 경우(하나는 원소가 없고 다른 하나는 있다.)**
+**자식 노드가 한 개일 경우(하나는 원소가 없고 다른 하나는 있다.)**              
+            
 >* 원소 삭제를 위해 삭제 하고자 하는 ket를 찾아야한다.(**Search**)
 >* 해당 노드와 leaf node(자식)을 삭제하고 leaf node가 아닌 자식을 해당노드의 부모와 이어준다.(**removeAboveExternal(w)** 사용)
 >* 삭제하고자 하는 key가 존재하지 않을 경우 예외처리를 한다.
->* #### 예시
+>#### 예시
 >![image](https://user-images.githubusercontent.com/86244920/210523568-49ad07af-c042-44da-85a2-cc2e8f3d46b7.png)
 >* **remove(4)**
 <br><br>
                
-**자식 노드가 두 개일 경우(자식 노드 둘 다 원소가 있다.)**
+**자식 노드가 두 개일 경우(자식 노드 둘 다 원소가 있다.)**              
 >* Inorder Traversal을 통해 노드를 찾는다.**(오른쪽->왼쪽->왼쪽->...)**
 >* 해당 노드를 삭제 하고자 하는 노드와 바꾼다.
 >* 그렇다면 **모든 상황**에 바뀐 노드는 하나의 자식이 있거나 또는 존재하지 않는다. 
 >* 해당 노드와 하나의 leaf 노드를 삭제하고, 삭제된 노드의 부모와 남은 자식과 이어준다.(**removeAboveExternal(z)** 사용)
 >* #### 예시
->![image](https://user-images.githubusercontent.com/86244920/210526165-4d75a557-0c93-4ff1-beda-89ccd55e78c0.png)         
+>![image](https://user-images.githubusercontent.com/86244920/210526165-4d75a557-0c93-4ff1-beda-89ccd55e78c0.png)          
 >* **remove(3)**
 > 첫 번째 과정은, 삭제하고자 하는 노드의 key보다 큰 노드 중, 가장 작은 ke를 가진 노드이기에, 이진 검색 트리의 성질을 유지하며 삭제한다.  
+                        
 <br>
-**`removeAboveExternal(w)`** 는 w와 부모를 삭제하고 w의 형제 노드를 부모 자리에 놓는다.       
+
+**`removeAboveExternal(w)`** 는 w와 부모를 삭제하고 w의 형제 노드를 부모 자리에 놓는다.                    
+
 <br>
+              
 ## Performance
 >* 공간 복잡도: **`O(n)`**
->* 모든 연산: **`O(h)`**
->**최선의 경우**
->![image](https://user-images.githubusercontent.com/86244920/210528087-7ac00741-04cd-4695-b46c-3851e96ccc0b.png)
->위와 같은 트리의 경우 h는 log n이기에, 모든 연산은 **`O(log n)`** 이다.
->**최악의 경우**
->![image](https://user-images.githubusercontent.com/86244920/210527877-f44eaeb0-48d6-4f5a-a1cb-5851195119c3.png)     
->위와 같은 트리의 경우 h는 n이기에, 모든 연산은 **`O(n)`** 이다.
-<br><br>  <br>  <br>                
+>* 모든 연산: **`O(h)`**             
+                      
+>**최선의 경우**            
+>![image](https://user-images.githubusercontent.com/86244920/210528087-7ac00741-04cd-4695-b46c-3851e96ccc0b.png)              
+>위와 같은 트리의 경우 h는 log n이기에, 모든 연산은 **`O(log n)`** 이다.           
+                                         
+>**최악의 경우**              
+>![image](https://user-images.githubusercontent.com/86244920/210527877-f44eaeb0-48d6-4f5a-a1cb-5851195119c3.png)              
+>위와 같은 트리의 경우 h는 n이기에, 모든 연산은 **`O(n)`** 이다.               
+<br><br><br><br>                 
              
 
 
