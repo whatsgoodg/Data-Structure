@@ -11,7 +11,7 @@
 * [이중연결리스트]()
 * [트리](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#tree)
 * [이진 트리](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#binary-tree)
-* [이진 탐색 트리]()
+* [이진 탐색 트리](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#binary-search-tree)
 * [우선순위 큐](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#binary-search-tree)
 * [힙]()
 * [해시 테이블](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#hash-table)
@@ -32,7 +32,7 @@
 >* 0부터 N-1의 index를 가진다.
 >* size는 고정되어 있으며 변경할 수 없다.
 ![image](https://user-images.githubusercontent.com/86244920/208943982-1415cf53-19b6-4e9e-9b27-d99819356652.png)
-                         
+<br><br>                         
 ## The Array ADT
 >* **`insertion(i, e)`**: index i에 e를 삽입한다.    
 >![image](https://user-images.githubusercontent.com/86244920/208944542-22a4e452-7f69-4356-8a15-05b9e4f3f991.png)             
@@ -41,7 +41,7 @@
 >* **`remove(i)`**: index i의 원소를 삭제한다. 
 삭제하는 원소의 오른쪽 원소부터 왼쪽으로 한 칸씩 이동하는 **`left shift`** 가 발생한다. 그러므로 **cost는** `O(N)`이다.
 >* **`at(i)`**: 배열의 index i의 원소를 반환한다. C++의 indexing은 주소를 이용하기 때문에 **cost**는 `O(1)`이다.
-                                    
+<br><br>                                    
 ### 구현              
 [**소스코드**](https://github.com/whatsgoodg/Data-Structure/blob/main/array.cpp)                  
 <br><br><br><br>                      
@@ -62,7 +62,7 @@
                           
 위와 같은 형태가 `단일연결리스트`이다.               
 단일연결리스트는 맨 앞과 뒤를 가리키는 포인터 **`head`** 와 **`tail`** 을 가진다.        
-                      
+<br><br>                  
 ## ADT
 단일연결리스트의 `ADT`는 아래와 같다.              
 **`addFront(element)`**
@@ -103,7 +103,7 @@ int main() { foo(); }
 대략적으로 위와 같은 함수 호출 위의 이미지이다. **main()->foo()->bar()** 순서로 함수가 호출되고 반대 순서로 종료된다.        
 이는 **가장 늦게** 호출된 함수(last-in)가 **가장 먼저** 종료(first-out)되는 Stack의 특징에 적합하다.              
 stack의 구현은 `배열`을 사용하여 굉장히 간단하게 할 수 있다.               
-               
+<br><br>               
 ## ADT             
 >* push(value): 값을 stack에 저장한다.
 >* pop(): 가장 늦게 저장된 값을 삭제한다. 
@@ -114,7 +114,7 @@ stack의 구현은 `배열`을 사용하여 굉장히 간단하게 할 수 있�
 Stack 구현에 있어 가장 중요한 점은 top 원소를 가리키는 **`포인터`** 이다.         
 배열로 구현되기 때문에 크기가 한정되어 있기에 **예외처리**가 필요하다.           
 ~~Stack의 응용은 사칙연산, 괄호 매칭이 있다.~~                  
-                
+<br><br>                
 ## 구현
 [**소스코드**](https://github.com/whatsgoodg/Data-Structure/blob/main/stack.cpp)                  
 <br><br><br><br>
@@ -127,7 +127,7 @@ Stack 구현에 있어 가장 중요한 점은 top 원소를 가리키는 **`포
 **`Queue`** 란 Stack과 조금 다른 자료구조이다.                    
 **`FIFO`** (first-in first-out)방식으로 동작하며 맨 처음 들어온 데이터가 가장 먼저 나간다.               
 그래서 Queue(line)이다. 버스정류장의 줄을 생각해보면 된다.                   
-            
+<br><br>            
 ## ADT           
 >* **`enqueue(value)`**: 값을 큐에 저장한다.
 >* **`dequeue()`**: 가장 먼저 저장된 값을 삭제한다.
@@ -166,7 +166,8 @@ void dequeue(){
 `enqueue`와 동일하게 f 포인터를 한 칸 옮기기만 하면 된다. 똑같이 인덱스를 벗어날 시, 0으로 돌아간다.(**환형 큐**)    
 
 Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**가 필요하다.               
-`Queue`의 **`응용`** 은 그래프 자료구조의 **BFS** 구현과, [**Round Robin Scheduler**](https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9A%B4%EB%93%9C_%EB%A1%9C%EB%B9%88_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81) 등이 있다.          
+`Queue`의 **`응용`** 은 그래프 자료구조의 **BFS** 구현과, [**Round Robin Scheduler**](https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9A%B4%EB%93%9C_%EB%A1%9C%EB%B9%88_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81) 등이 있다.   
+<br><br>
 ## 구현 
 [**소스코드**](https://github.com/whatsgoodg/Data-Structure/blob/main/queue.cpp)
 <br><br><br><br>
@@ -179,7 +180,7 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 **`Tree`** 란 node가 **부모-자식** 관계를 가지는 자료구조이다. 이는 조직구조, file system 등을 예로 들 수 있다.          
                         
 ![image](https://user-images.githubusercontent.com/86244920/210497251-664ad776-98aa-4b93-9485-5be7284c84c2.png)            
-            
+<br><br>            
 ## 용어
 >* **`Depth`**: tree의 깊이. 특정 노드의 부모의 최대 개수
 >* **`Height`**: tree의 높이. 특정 노드의 자식의 최대 개수
@@ -189,13 +190,13 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 >* **`Anceators of node`**: 자기 자신을 포함한 Depth에 포함되는 노드
 >* **`Descendant of node`**: 자기 자신을 포함한 Height에 포함되는 노드
 >* **`Subtree`**: 특정 노드와 모든 자식들이 구성하는 tree
-             
+<br><br>             
 ### Depth and Height
 >* **`Edge(u, v)`**: 두 노드를 연결하는 간선이다. u는 v의 부모이다.
 >* **`Path(v1, v2, v3,..)`**: 노드들의 연결을 뜻 한다. 두 개의 노드 **하나**의 간선을 형성한다.
 >* **`Depth of node v`**: v가 root이면 0으로 본다. Root부터 v의 부모노드 Sequence의 개수로 계산한다.(만약 부모가 하나면 v의 depth는 1이다.
 >* **`Height of node v`**: v가 leaf 노드이면 0이다. v부터 자식노드 Sequence의 최댓값으로 계산한다.(자식 연결이 2,3,4일 경우 4로 계산한다.)
-               
+<br><br>               
 ## Tree ADT
 >* **`Size()`**
 >* **`empty()`**
@@ -205,7 +206,7 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 >* **`list<Node> p.children()`**: p node의 모든 자식을 list에 저장하여 반환한다.
 >* **`p.isRoot()`**: p node가 root node이면 true를 반환한다.
 >* **`p.isExternal()`**: p node가 leaf node이면 true를 반환한다.
-              
+<br><br>              
 ## Preorder Traversal       
 **`Preorer Traversal`** 이란 특정 노드를 기준으로 자식들보다 먼저 탐색하는 것을 의미한다.              
 #### 수도코드                
@@ -218,7 +219,7 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 #### 응용
 구조화된 문서 탐색 
 
-         
+<br><br>         
 ## Postorder Traversal
 **`Postorer Traversal`** 이란 특정 노드를 기준으로 자식부터 탐색하는 것을 의미한다.
 #### 수도코드               
@@ -243,7 +244,7 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 자식이 최대 2개이니, **`left child`**(왼쪽 자식), **`right child`**(오른쪽 자식)으로 구분할 수 있다.              
                          
 ![image](https://user-images.githubusercontent.com/86244920/210503686-376f8704-fb8f-4ad8-8699-d18cfddfc151.png)               
-           
+<br><br>           
 ## Arithmetic Expression Tree
 이진 트리는 사칙연산을 수행할 수 있다.
 >* **`Internal nodes`**: 연산자
@@ -252,7 +253,7 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 ![image](https://user-images.githubusercontent.com/86244920/210504085-79ddc27d-af6d-4ec7-a4cf-dc269bc8e522.png)            
              
 위와 같이 (2 x (a - 1) + (3 x b))를 계산할 수 있다.
-          
+<br><br>          
 ## Properties
 **`Notation`**
 >* **n**: 총 노드의 개수
@@ -273,10 +274,10 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 위의 두 이진 트리에서 다음과 같은 성질을 도출한다.               
                  
 ![image](https://user-images.githubusercontent.com/86244920/210505159-fad48ea9-3183-44cf-bac6-422748e5ebd2.png)
-
+<br><br>
 ## ADT
 ADT는 기존 tree에서 **`Node p.left()`** , **`Node p.right()`** 가 추가된다. 각각 특정 노드의 왼쪽, 오른쪽 자식을 반환한다.           
- 
+ <br><br>
 ## Inorder Traversal
 **`Inorder Traversal`** 이란 특정노드를 기준으로 왼쪽 자식 이후, 오른쪽 자식 이전에 탐색하는 것을 의미한다.      
 #### 수도코드
@@ -284,14 +285,15 @@ ADT는 기존 tree에서 **`Node p.left()`** , **`Node p.right()`** 가 추가�
                               
 ![image](https://user-images.githubusercontent.com/86244920/210506269-7cfbc428-58b3-4ab8-802a-f8fbe9bdad95.png)              
               
-위와 같은 순서로 탐색한다.        
+위와 같은 순서로 탐색한다.   
+<br><br>
 ## Euler Tour Traversal 
 preorder, postorder, inorder 탐색을 모두 포함한 탐색 방법이다.     
 Internal node를 세 번씩 방문한다.           
 ![image](https://user-images.githubusercontent.com/86244920/210508419-9e666986-a49a-4553-a916-103aab9da43a.png)            
 왼쪽(**preorder**), 밑(**inorder**), 오른쪽(**postorder**)에서 한 번씩 방문한다.                 
 특정노드가 세 번 탐색될 때 **왼쪽**은 부모로부터, **밑**은 왼쪽 자식으로 부터, **오른쪽**은 오른쪽 자식으로 부터 방문된다.           
-              
+<br><br>              
 ## Types of binary tree
 #### Full binary tree
 ![image](https://user-images.githubusercontent.com/86244920/210506381-59fdf9b1-7cea-46d4-b354-f666d30912ba.png)         
@@ -326,7 +328,7 @@ leaf node 부분을 제외하고 모두 두 개의 자식을 가지는 이진 �
 _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.**_             
 #### 예시
 ![image](https://user-images.githubusercontent.com/86244920/210521254-31317a7e-bd0f-4ba4-99a8-61b6981804d7.png)          
-              
+<br><br>              
 ## Search
 이진 검색 트리의 탐색 방법을 알아보자.
 #### 수도코드       
@@ -341,7 +343,8 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 >![image](https://user-images.githubusercontent.com/86244920/210522131-3efaa2a1-72d2-41a9-b62d-4b02de2cc3ec.png)     
 >                      
 >* **TreeSearch(4, root)**           
-                 <br>
+
+<br><br>
 ## Insertion
 >* 원소 삽입을 위해 삽입 하고자 하는 key를 찾아야한다.(**Search**) 
 >* 이진 탐색 트리의 성질을 충족하며 탐색을 해, leaf node에 도달한다.
@@ -351,8 +354,8 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 >![image](https://user-images.githubusercontent.com/86244920/210522821-d9248771-07cf-45fc-9c05-c1f794d2c9f5.png)   
 >                        
 >* **insert(5)**
-<br>
-                 
+              
+<br><br>                 
 ## Deletion
 **자식 노드가 한 개일 경우(하나는 원소가 없고 다른 하나는 있다.)**              
             
@@ -363,6 +366,7 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 >![image](https://user-images.githubusercontent.com/86244920/210523568-49ad07af-c042-44da-85a2-cc2e8f3d46b7.png)
 >                 
 >* **remove(4)**
+             
 <br><br>
                
 **자식 노드가 두 개일 경우(자식 노드 둘 다 원소가 있다.)**              
