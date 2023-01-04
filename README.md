@@ -188,6 +188,107 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 >* **`p.isExternal()`**: p node가 leaf node이면 true를 반환한다.
         
 ## Preorder Traversal       
+**`Preorer Traversal`** 이란 특정 노드를 기준으로 자식들보다 먼저 탐색하는 것을 의미한다.              
+#### 수도코드                
+![image](https://user-images.githubusercontent.com/86244920/210502372-529e9ae8-fc47-45a1-a7b6-4441844e63b5.png)       
+           
+#### 예시
+![image](https://user-images.githubusercontent.com/86244920/210502516-98d336bb-5af6-4197-bbdf-74387f8feab9.png)     
+              
+#### 응용
+구조화된 문서 탐색 
+
+          
+위의 순서로 방문한다.
+## Postorder Traversal
+**`Postorer Traversal`** 이란 특정 노드를 기준으로 자식부터 탐색하는 것을 의미한다.
+#### 수도코드               
+![image](https://user-images.githubusercontent.com/86244920/210502748-5e76af39-1155-4e9a-9da1-05fc1b315e0c.png)      
+           
+#### 예시
+![image](https://user-images.githubusercontent.com/86244920/210502800-b0df355f-f924-4960-a9a1-8389a583db3a.png)
+          
+#### 응용
+폴더, 파일의 저장공간 계산
+
+# Binary Tree
+**`Binary Tree`** 란 부모 노드의 자식이 2개 이하인 tree를 뜻 한다. 자식이 0개 또는 2개만 존재하는 tree를 **`Proper Binary Tree`** 라고 칭한다.         
+자식이 최대 2개이니, **`left child`**(왼쪽 자식), **`right child`**(오른쪽 자식)으로 구분할 수 있다.              
+                         
+![image](https://user-images.githubusercontent.com/86244920/210503686-376f8704-fb8f-4ad8-8699-d18cfddfc151.png)               
+           
+## Arithmetic Expression Tree
+이진 트리는 사칙연산을 수행할 수 있다.
+>* **`Internal nodes`**: 연산자
+>* **`External nodes`**: 피연산자
+         
+![image](https://user-images.githubusercontent.com/86244920/210504085-79ddc27d-af6d-4ec7-a4cf-dc269bc8e522.png)            
+             
+위와 같이 (2 x (a - 1) + (3 x b))를 계산할 수 있다.
+          
+## Properties
+**`Notation`**
+>* **n**: 총 노드의 개수
+>* **m**: internal 노드의 개수
+>* **l**: leaf 노드의 개수
+>* **h**: hegiht
+![image](https://user-images.githubusercontent.com/86244920/210504449-113fe789-9a1c-42b3-ad59-75bff3c86ebd.png)            
+                      
+위의 두 이진 트리에서 밑과 같은 성질을 도출한다.         
+                
+![image](https://user-images.githubusercontent.com/86244920/210504415-16938cef-3eea-4190-bdf0-31bc265d6f81.png)               
+                   
+![image](https://user-images.githubusercontent.com/86244920/210504931-806e5bee-5bf9-4528-8b0f-fc803e7c0973.png)            
+                  
+위의 두 이진 트리에서 다음과 같은 성질을 도출한다.               
+                 
+![image](https://user-images.githubusercontent.com/86244920/210505159-fad48ea9-3183-44cf-bac6-422748e5ebd2.png)
+
+## ADT
+ADT는 기존 tree에서 **`Node p.left()`** , **Node p.right()** 가 추가된다. 각각 특정 노드의 왼쪽, 오른쪽 자식을 반환한다.           
+ 
+## Inorder Traversal
+**`Inorder Traversal`** 이란 특정노드를 기준으로 왼쪽 자식 이후, 오른쪽 자식 이전에 탐색하는 것을 의미한다.      
+#### 수도코드
+![image](https://user-images.githubusercontent.com/86244920/210506122-adcf9dbc-aa34-46c2-a314-300163d85c0c.png)               
+                              
+![image](https://user-images.githubusercontent.com/86244920/210506269-7cfbc428-58b3-4ab8-802a-f8fbe9bdad95.png)              
+              
+위와 같은 순서로 탐색한다.        
+## Euler Tour Traversal 
+preorder, postorder, inorder 탐색을 모두 포함한 탐색 방법이다.     
+Internal node를 세 번씩 방문한다.           
+![image](https://user-images.githubusercontent.com/86244920/210508419-9e666986-a49a-4553-a916-103aab9da43a.png)            
+왼쪽(**preorder**), 밑(**inorder**), 오른쪽(**postorder**)에서 한 번씩 방문한다.                 
+특정노드가 세 번 탐색될 때 **왼쪽**은 부모로부터, **밑**은 왼쪽 자식으로 부터, **오른쪽**은 오른쪽 자식으로 부터 방문된다.           
+              
+## Types of binary tree
+#### Full binary tree
+![image](https://user-images.githubusercontent.com/86244920/210506381-59fdf9b1-7cea-46d4-b354-f666d30912ba.png)         
+             
+0 또는 2개의 자식만을 가지는 이진 트리이다.
+#### Complete binary tree
+![image](https://user-images.githubusercontent.com/86244920/210506479-cf8fa021-2ceb-46b0-8445-c2435b071669.png)          
+             
+leaf node 부분을 제외하고 모두 두 개의 자식을 가지는 이진 트리이다.         
+#### Perfect binary tree 
+![image](https://user-images.githubusercontent.com/86244920/210506746-a7172387-6de7-4734-9f52-747633fd35e3.png)            
+          
+모든 leaft 노드가 같은 level에 있고, internal node가 무조건 두 개의 자식을 가지는 이진 트리이다.    
+#### Balanced binary tree
+![image](https://user-images.githubusercontent.com/86244920/210507082-28a3a7db-ddb7-4fd5-b4c4-a7d0e01d2683.png)           
+모든 노드의 왼쪽 오른쪽 subtree의 height가 최대 1이 차이나는 이진트리이다.             
+#### Degenerate binary tree
+![image](https://user-images.githubusercontent.com/86244920/210507305-afab6501-ed23-4d07-8bd1-2bab3835829a.png)           
+이진 트리의 조건을 충족하지만, 성능이 가장 나쁜 이진 트리이다. 이를 해결하기 위한 방법은 AVL, Red black tree이다.          
+
+
+
+
+
+
+
+
 
 
 
