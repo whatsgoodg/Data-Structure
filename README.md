@@ -12,7 +12,7 @@
 * [트리](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#tree)
 * [이진 트리](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#binary-tree)
 * [이진 탐색 트리]()
-* [우선순위 큐]()
+* [우선순위 큐](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#binary-search-tree)
 * [힙]()
 * [해시 테이블](https://github.com/whatsgoodg/Data-Structure/blob/main/README.md#hash-table)
 * [그래프]()
@@ -331,7 +331,7 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 이진 검색 트리의 탐색 방법을 알아보자.
 #### 수도코드       
 ![image](https://user-images.githubusercontent.com/86244920/210521438-cdda4d81-ef9e-4491-b1aa-a7bda102b191.png)        
-특정 수를 탐색하는 알고리즘은 위의 수도코드와 같다. 
+특정 노드를 탐색하는 알고리즘은 위의 수도코드와 같다. 
 >* Root node에서 탐색을 시작한다.
 >* 찾고자 하는 key가 특정 노드의 key보다 **작을** 경우, 왼쪽 자식을 탐색한다.
 >* 찾고자 하는 key가 특정 노드의 key보다 **클** 경우, 오른쪽 자식을 탐색한다.
