@@ -317,16 +317,71 @@ leaf node 부분을 제외하고 모두 두 개의 자식을 가지는 이진 �
 
 
 # Binary Search Tree
-
-
-
-
-
-
-
-
-
-
+**`Binary Search Tree`** 란 **key** 또는 **entry**(keym value)를 저장하는 이진 트리이다.             
+#### Property 
+**node v와 왼쪽 자식 u, 오른쪽 자식 w가 있다고 하자.**
+>* **`key(u) <= key(v) <= key(w)`** 를 충족해야한다.     
+>* leaf node는 원소를 저장하지 않은 상태로 존재한다.(원소 삽입, 삭제를 위해 사용된다.)
+                       
+_**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.**_             
+#### 예시
+![image](https://user-images.githubusercontent.com/86244920/210521254-31317a7e-bd0f-4ba4-99a8-61b6981804d7.png)          
+              
+## Search
+이진 검색 트리의 탐색 방법을 알아보자.
+#### 수도코드       
+![image](https://user-images.githubusercontent.com/86244920/210521438-cdda4d81-ef9e-4491-b1aa-a7bda102b191.png)        
+특정 수를 탐색하는 알고리즘은 위의 수도코드와 같다. 
+>* Root node에서 탐색을 시작한다.
+>* 찾고자 하는 key가 특정 노드의 key보다 작을 경우, 왼쪽 자식을 탐색한다.
+>* 찾고자 하는 key가 특정 노드의 key보다 클 경우, 오른쪽 자식을 탐색한다.
+>* 찾고자 하는 key가 특정 노드의 key와 같을 경우 해당 node를 반환한다.
+>* 찾고자 하는 key를 찾지 못하고 leaf node에 도달할 시, leaf node를 반환한다.
+>* #### 예시
+>![image](https://user-images.githubusercontent.com/86244920/210522131-3efaa2a1-72d2-41a9-b62d-4b02de2cc3ec.png)           
+>* **TreeSearch(4, root)**           
+                 <br>
+## Insertion
+>* 원소 삽입을 위해 삽입 하고자 하는 key를 찾아야한다.(**Search**) 
+>* 이진 탐색 트리의 성질을 충족하며 탐색을 해, leaf node에 도달한다.
+>* leaf node에 도달한 후, 원소를 삽입하고 자식 노드를 할당한다.
+>* 만약 동일 key가 이미 존재할 경우, 예외처리를 한다.(수정 or error)     
+>* #### 예시
+>* ![image](https://user-images.githubusercontent.com/86244920/210522821-d9248771-07cf-45fc-9c05-c1f794d2c9f5.png)             
+>* **insert(5)**
+               <br>
+## Deletion
+**자식 노드가 한 개일 경우(하나는 원소가 없고 다른 하나는 있다.)**
+>* 원소 삭제를 위해 삭제 하고자 하는 ket를 찾아야한다.(**Search**)
+>* 해당 노드와 leaf node(자식)을 삭제하고 leaf node가 아닌 자식을 해당노드의 부모와 이어준다.(**removeAboveExternal(w)** 사용)
+>* 삭제하고자 하는 key가 존재하지 않을 경우 예외처리를 한다.
+>* #### 예시
+>![image](https://user-images.githubusercontent.com/86244920/210523568-49ad07af-c042-44da-85a2-cc2e8f3d46b7.png)
+>* **remove(4)**
+            <br>
+**자식 노드가 두 개일 경우(자식 노드 둘 다 원소가 있다.)**
+>* Inorder Traversal을 통해 노드를 찾는다.**(오른쪽->왼쪽->왼쪽->...)**
+>* 해당 노드를 삭제 하고자 하는 노드와 바꾼다.
+>* 그렇다면 **모든 상황**에 바뀐 노드는 하나의 자식이 있거나 또는 존재하지 않는다. 
+>* 해당 노드와 하나의 leaf 노드를 삭제하고, 삭제된 노드의 부모와 남은 자식과 이어준다.(**removeAboveExternal(z)** 사용)
+>* #### 예시
+>![image](https://user-images.githubusercontent.com/86244920/210526165-4d75a557-0c93-4ff1-beda-89ccd55e78c0.png)         
+>* **remove(3)**
+> 첫 번째 과정은, 삭제하고자 하는 노드의 key보다 큰 노드 중, 가장 작은 ke를 가진 노드이기에, 이진 검색 트리의 성질을 유지하며 삭제한다.  
+<br>
+**`removeAboveExternal(w)`** 는 w와 부모를 삭제하고 w의 형제 노드를 부모 자리에 놓는다.       
+<br>
+## Performance
+>* 공간 복잡도: **`O(n)`**
+>* 모든 연산: **`O(h)`**
+>**최선의 경우**
+>![image](https://user-images.githubusercontent.com/86244920/210528087-7ac00741-04cd-4695-b46c-3851e96ccc0b.png)
+>위와 같은 트리의 경우 h는 log n이기에, 모든 연산은 **`O(log n)`** 이다.
+>**최악의 경우**
+>![image](https://user-images.githubusercontent.com/86244920/210527877-f44eaeb0-48d6-4f5a-a1cb-5851195119c3.png)     
+>위와 같은 트리의 경우 h는 n이기에, 모든 연산은 **`O(n)`** 이다.
+<br><br>  <br>  <br>                
+             
 
 
 
