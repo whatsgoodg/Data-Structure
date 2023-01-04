@@ -266,8 +266,10 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
                 
 ![image](https://user-images.githubusercontent.com/86244920/210504415-16938cef-3eea-4190-bdf0-31bc265d6f81.png)               
                    
-![image](https://user-images.githubusercontent.com/86244920/210504931-806e5bee-5bf9-4528-8b0f-fc803e7c0973.png)            
-                  
+----------------------------------------------------------------                   
+![image](https://user-images.githubusercontent.com/86244920/210504931-806e5bee-5bf9-4528-8b0f-fc803e7c0973.png)       
+![image](https://user-images.githubusercontent.com/86244920/210510207-98f8a434-089c-409a-9357-2da5b2b3dcee.png)              
+                     
 위의 두 이진 트리에서 다음과 같은 성질을 도출한다.               
                  
 ![image](https://user-images.githubusercontent.com/86244920/210505159-fad48ea9-3183-44cf-bac6-422748e5ebd2.png)
