@@ -190,7 +190,11 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 >* **`External node`**(leaf): 자식이 없는 노드
 >* **`Anceators of node`**: 자기 자신을 포함한 Depth에 포함되는 노드
 >* **`Descendant of node`**: 자기 자신을 포함한 Height에 포함되는 노드
->* **`Subtree`**: 특정 노드와 모든 자식들이 구성하는 tree
+>* **`Subtree`**: 특정 노드와 모든 자식들이 구성하는 tree           
+>                 
+>* #### 예시               
+>![image](https://user-images.githubusercontent.com/86244920/210565348-32c3ccf7-7e9b-4961-893d-45abfb56d6ad.png)                
+            
 <br><br>             
 ### Depth and Height
 >* **`Edge(u, v)`**: 두 노드를 연결하는 간선이다. u는 v의 부모이다.
@@ -207,6 +211,10 @@ Stack과 동일하게 배열의 크기는 한정적이므로, **예외처리**�
 >* **`list<Node> p.children()`**: p node의 모든 자식을 list에 저장하여 반환한다.
 >* **`p.isRoot()`**: p node가 root node이면 true를 반환한다.
 >* **`p.isExternal()`**: p node가 leaf node이면 true를 반환한다.
+>            
+>#### 예시
+>![image](https://user-images.githubusercontent.com/86244920/210565562-61e16d08-cf52-47d7-a4f2-e15c155fdb77.png)               
+                    
 <br><br>              
 ## Preorder Traversal       
 **`Preorer Traversal`** 이란 특정 노드를 기준으로 자식들보다 먼저 탐색하는 것을 의미한다.              
