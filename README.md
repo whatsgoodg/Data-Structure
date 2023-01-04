@@ -333,10 +333,10 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 ![image](https://user-images.githubusercontent.com/86244920/210521438-cdda4d81-ef9e-4491-b1aa-a7bda102b191.png)        
 특정 수를 탐색하는 알고리즘은 위의 수도코드와 같다. 
 >* Root node에서 탐색을 시작한다.
->* 찾고자 하는 key가 특정 노드의 key보다 작을 경우, 왼쪽 자식을 탐색한다.
->* 찾고자 하는 key가 특정 노드의 key보다 클 경우, 오른쪽 자식을 탐색한다.
->* 찾고자 하는 key가 특정 노드의 key와 같을 경우 해당 node를 반환한다.
->* 찾고자 하는 key를 찾지 못하고 leaf node에 도달할 시, leaf node를 반환한다.
+>* 찾고자 하는 key가 특정 노드의 key보다 **작을** 경우, 왼쪽 자식을 탐색한다.
+>* 찾고자 하는 key가 특정 노드의 key보다 **클** 경우, 오른쪽 자식을 탐색한다.
+>* 찾고자 하는 key가 특정 노드의 key와 **같을** 경우 해당 node를 반환한다.
+>* 찾고자 하는 key를 찾지 **못하고** leaf node에 도달할 시, leaf node를 반환한다.
 >* #### 예시
 >![image](https://user-images.githubusercontent.com/86244920/210522131-3efaa2a1-72d2-41a9-b62d-4b02de2cc3ec.png)           
 >* **TreeSearch(4, root)**           
@@ -349,7 +349,7 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 >* #### 예시
 >* ![image](https://user-images.githubusercontent.com/86244920/210522821-d9248771-07cf-45fc-9c05-c1f794d2c9f5.png)             
 >* **insert(5)**
-               <br>
+<br>
 ## Deletion
 **자식 노드가 한 개일 경우(하나는 원소가 없고 다른 하나는 있다.)**
 >* 원소 삭제를 위해 삭제 하고자 하는 ket를 찾아야한다.(**Search**)
@@ -358,7 +358,8 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 >* #### 예시
 >![image](https://user-images.githubusercontent.com/86244920/210523568-49ad07af-c042-44da-85a2-cc2e8f3d46b7.png)
 >* **remove(4)**
-            <br>
+<br><br>
+               
 **자식 노드가 두 개일 경우(자식 노드 둘 다 원소가 있다.)**
 >* Inorder Traversal을 통해 노드를 찾는다.**(오른쪽->왼쪽->왼쪽->...)**
 >* 해당 노드를 삭제 하고자 하는 노드와 바꾼다.
