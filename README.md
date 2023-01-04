@@ -338,7 +338,8 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 >* 찾고자 하는 key가 특정 노드의 key와 **같을** 경우 해당 node를 반환한다.
 >* 찾고자 하는 key를 찾지 **못하고** leaf node에 도달할 시, leaf node를 반환한다.
 >* #### 예시
->![image](https://user-images.githubusercontent.com/86244920/210522131-3efaa2a1-72d2-41a9-b62d-4b02de2cc3ec.png)           
+>![image](https://user-images.githubusercontent.com/86244920/210522131-3efaa2a1-72d2-41a9-b62d-4b02de2cc3ec.png)     
+>                      
 >* **TreeSearch(4, root)**           
                  <br>
 ## Insertion
@@ -347,7 +348,8 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 >* leaf node에 도달한 후, 원소를 삽입하고 자식 노드를 할당한다.
 >* 만약 동일 key가 이미 존재할 경우, 예외처리를 한다.(수정 or error)     
 >* #### 예시
->* ![image](https://user-images.githubusercontent.com/86244920/210522821-d9248771-07cf-45fc-9c05-c1f794d2c9f5.png)             
+>![image](https://user-images.githubusercontent.com/86244920/210522821-d9248771-07cf-45fc-9c05-c1f794d2c9f5.png)   
+>                        
 >* **insert(5)**
 <br>
                  
@@ -357,8 +359,9 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 >* 원소 삭제를 위해 삭제 하고자 하는 ket를 찾아야한다.(**Search**)
 >* 해당 노드와 leaf node(자식)을 삭제하고 leaf node가 아닌 자식을 해당노드의 부모와 이어준다.(**removeAboveExternal(w)** 사용)
 >* 삭제하고자 하는 key가 존재하지 않을 경우 예외처리를 한다.
->#### 예시
+>* #### 예시
 >![image](https://user-images.githubusercontent.com/86244920/210523568-49ad07af-c042-44da-85a2-cc2e8f3d46b7.png)
+>                 
 >* **remove(4)**
 <br><br>
                
@@ -369,6 +372,7 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 >* 해당 노드와 하나의 leaf 노드를 삭제하고, 삭제된 노드의 부모와 남은 자식과 이어준다.(**removeAboveExternal(z)** 사용)
 >* #### 예시
 >![image](https://user-images.githubusercontent.com/86244920/210526165-4d75a557-0c93-4ff1-beda-89ccd55e78c0.png)          
+>              
 >* **remove(3)**
 > 첫 번째 과정은, 삭제하고자 하는 노드의 key보다 큰 노드 중, 가장 작은 ke를 가진 노드이기에, 이진 검색 트리의 성질을 유지하며 삭제한다.  
                         
@@ -382,13 +386,18 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 >* 공간 복잡도: **`O(n)`**
 >* 모든 연산: **`O(h)`**             
                       
->**최선의 경우**            
->![image](https://user-images.githubusercontent.com/86244920/210528087-7ac00741-04cd-4695-b46c-3851e96ccc0b.png)              
+>* **최선의 경우**            
+>![image](https://user-images.githubusercontent.com/86244920/210528087-7ac00741-04cd-4695-b46c-3851e96ccc0b.png)   
+>                             
 >위와 같은 트리의 경우 h는 log n이기에, 모든 연산은 **`O(log n)`** 이다.           
                                          
->**최악의 경우**              
->![image](https://user-images.githubusercontent.com/86244920/210527877-f44eaeb0-48d6-4f5a-a1cb-5851195119c3.png)              
->위와 같은 트리의 경우 h는 n이기에, 모든 연산은 **`O(n)`** 이다.               
+>* **최악의 경우**              
+>![image](https://user-images.githubusercontent.com/86244920/210527877-f44eaeb0-48d6-4f5a-a1cb-5851195119c3.png)   
+>                         
+>위와 같은 트리의 경우 h는 n이기에, 모든 연산은 **`O(n)`** 이다.     
+>위와 같은 문제점은 특정 조건(존재하 노드의 key보다 큼)의 노드만 삽입이 될 때에 발생한다. 
+>이를 해결하기 위한 **`AVL tree`** 를 알아보자. 
+                                    
 <br><br><br><br>                 
              
 
