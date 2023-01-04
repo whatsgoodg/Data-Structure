@@ -396,15 +396,59 @@ _**`Inorder Traversal`을 수행할 시, key를 오름차순으로 탐색한다.
 >                             
 >위와 같은 트리의 경우 h는 log n이기에, 모든 연산은 **`O(log n)`** 이다.           
                                          
->* **최악의 경우**              
->![image](https://user-images.githubusercontent.com/86244920/210527877-f44eaeb0-48d6-4f5a-a1cb-5851195119c3.png)   
->                         
+>* **최악의 경우(Degenerate binary tre)**              
+>![image](https://user-images.githubusercontent.com/86244920/210527877-f44eaeb0-48d6-4f5a-a1cb-5851195119c3.png)         
+>                   
 >위와 같은 트리의 경우 h는 n이기에, 모든 연산은 **`O(n)`** 이다.            
 >위와 같은 문제점은 노드들이 key의 **오름차순**으로 삽입될 때 이다.      
 >이를 해결하기 위한 **`AVL tree`** 를 알아보자.  
                                     
 <br><br><br><br>                 
-             
+# AVL Tree
+**`AVL Tree`** 란 **`Balanced Binary Search Tree`** 이다. 모든 Subtree의 height가 **최대 1**까지 차이나는 트리이다.            
+AVL Tree는 이진 탐색 트리 중, height가 **어떠한 상황**에서도 **log n**이 보장되는 Tree이다. ~~증명은 하지 않는다.~~    
+위에서 본 h가 n인 경우의 이진 탐색 트리는 `선형 자료구조`인 리스트와 다를게 없다.            
+노드가 key가 오름차순으로 이진 탐색 트리에 삽입될 경우, 이와 같은 상황이 발생할 수 있다.            
+이를 해결하기 위해 `AVL tree'는 삽입, 삭제가 일어날 때마다, height를 log n으로 유지하기 위해 **`Restructuring`** 이 필요하다.    
+**C++의 이진 탐색 트리는 이와 비슷한 레드 블랙 트리로 구현되어 있다.**
+<br><br>
+## Insertion
+이진 검색 트리의 insertion을 수행한 이후, AVL tree는 **`Trinode Restructuring`** 를 수행한다.       
+<br><br>
+### Single Rotation
+**`Single Rotation`** 이란 **하나**의 subtree가 이동하는 것을 의미한다.        
+                 
+![image](https://user-images.githubusercontent.com/86244920/210549380-5a1b49a2-8900-45fa-b494-367cd46dd54c.png)     
+            
+a가 b의 왼쪽 자식 subtree가 되며 AVL Tree의 성질을 만족한다.           
+                   
+![image](https://user-images.githubusercontent.com/86244920/210549409-03d84b20-ed38-4753-aaec-f3d5afa4db6d.png)         
+            
+c가 b의 오른쪽 자식 subtree가 되며 AVL Tree의 성질을 만족한다.          
+          
+### Double Rotation
+**`Double Rotation`** 이란 **두 개**의 subtree가 이동하는 것을 의미한다.       
+               
+![image](https://user-images.githubusercontent.com/86244920/210550040-e731d265-7902-4c44-bca5-877acbe7358d.png)          
+         
+a와 c가 각각 b의 왼쪽, 오른쪽 subtree가 된다.           
+              
+![image](https://user-images.githubusercontent.com/86244920/210550287-ee767ed7-28db-4b7d-b07a-bd52309f3fc4.png)             
+            
+(위와 비슷하다.)           
+<br><br>
+## Removal
+`AVL Tree`의 삭제는 이진 탐색 트리의 삭제를 진행 한 이후, 삽입과 동일하게 추가적으로 성질을 만족하기 위해 **`Rebalancing`** 을 수행한다.       
+          
+![image](https://user-images.githubusercontent.com/86244920/210551315-2edade5b-b281-4912-94de-0408b8c62cc1.png)          
+              
+위의 이미지와 같이 삭제 이후 AVL tree의 성질을 충족하지 못해, `Rebalancing`을 수행해야한다.         
+### Rebalancing
+
+               
+
+
+
 
 
 
