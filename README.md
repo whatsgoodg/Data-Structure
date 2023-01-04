@@ -310,11 +310,13 @@ leaf node 부분을 제외하고 모두 두 개의 자식을 가지는 이진 �
 모든 노드의 왼쪽 오른쪽 subtree의 height가 최대 1이 차이나는 이진트리이다.             
 #### Degenerate binary tree
 ![image](https://user-images.githubusercontent.com/86244920/210507305-afab6501-ed23-4d07-8bd1-2bab3835829a.png)           
-이진 트리의 조건을 충족하지만, 성능이 가장 나쁜 이진 트리이다. 이를 해결하기 위한 방법은 AVL, Red black tree이다.          
+이진 트리의 조건을 충족하지만, 성능이 가장 나쁜 이진 트리이다.(이진 검색 트리에서 알아보자.)            
+이를 해결하기 위한 방법은 AVL, Red black tree이다.          
 
 <br><br><br><br>
 
 
+# Binary Search Tree
 
 
 
