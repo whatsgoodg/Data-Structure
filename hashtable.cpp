@@ -42,7 +42,7 @@ private:
 	entry* table;
 	int capacity;
 	int hashFunc(int key) {
-		return (capcity + key % capacity) % capacity;
+		return (capacity + key % capacity) % capacity;
 	}
 public:
 	hashTable(int N) {
