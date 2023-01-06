@@ -66,7 +66,7 @@ public:
 
 		while (table[index].valid != EMPTY && probe <= capacity) {
 
-			if (table[index].valid == OCCUP && table[index].key == key) {
+			if (table[index].key == key && table[index].valid == OCCUP) {
 				return index;
 			}
 			index = hashFunc(index + hashFunc2(key));
@@ -98,7 +98,7 @@ public:
 
 		while (table[index].valid != EMPTY && probe <= capacity) {
 
-			if (table[index].valid == OCCUP && table[index].key == key) {
+			if (table[index].key == key && table[index].valid == OCCUP) {
 				cout << table[index].value << endl;
 				table[index].erase();
 				return;
