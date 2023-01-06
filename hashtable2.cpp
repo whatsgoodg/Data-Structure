@@ -1,10 +1,6 @@
 /*
-삭제시 dummy node를 위한 AVAILABLE이 필요하다.
-삽입 시: OCCUP
-삭제 시: AVAIL
-초기화전: EMPTY
-
 Open addressing + Double hashing
+
 충돌 시과 탐색은 추가 해시함수를 사용한다.
 Linear probing: (hash1 + 1) % capacity
 Double hashing: (hash1 + hash2) % capacity
