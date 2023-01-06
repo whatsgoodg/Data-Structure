@@ -10,6 +10,10 @@ Open addressing + Linear probing
 충돌 시 탐색의 횟수가 크기를 넘어가면 예외처리
 insert: key 중복시 값 수정
 
+조건
+find: if AVAIL && OCCUP: 순회, else && OCCUP && key 동일 시: inex 반환
+insert: OCCUP: 순회, else: 삽입 or 수정
+erase: find와 동일.
 */
 #include <iostream>
 #define EMPTY 0
