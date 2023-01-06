@@ -4,6 +4,20 @@ using namespace std;
 // 벡터와 포인터를 이용한 일반 트리 
 // 중복된 키가 없다고 가정
 
+/*
+* Node: 부모 노드와 모든 자식 노드의 포인터 list
+* Tree: root 노드, 모든 노드의 포인터 list
+
+* insert: 
+1. nodes list 삽입
+2. 부모 chil 삽입
+3. 삽입된 노드의 부모 포인터 초기화
+
+* remove
+1. 삭제될 노드의 자식들을 부모에게 전달
+2. 삭제할 노드의 부모 list에서 삭제
+3. nodes list에서 삭제.
+*/
 class Node {
 private:
 	int data; //원소 값
@@ -29,11 +43,12 @@ public:
 		root->par = NULL;
 	}
 	void insert(int par_data, int data) {//부모 key에 새로운 노드 할당
-		Node* node = new Node(data);
 		for (int i = 0; i < nodes.size(); i++) {
 			if (nodes[i]->data = par_data) { 
-				nodes[i]->chil.push_back(node);
-				node->par = nodes[i];
+				Node* new_node = new Node(data);
+				nodes.push_back(new_node);
+				new_node->par = nodes[i];
+				nodes[i]->chil.push_back(new_node);
 				return;
 			}
 		}
@@ -91,5 +106,22 @@ public:
 				return &(chil_list);
 			}
 		}
+	}
+	Node* get_root() { return root; }
+	void preorder(Node* node) { //전위 순회
+		if (!node) return;
+
+		cout << node->data << ' ';
+		for (int i = 0; i < node->chil.size(); i++) {
+			preorder(node->chil[i]);
+		}
+	}
+	void postorder(Node* node) {//후위 순회
+		if (!node) return;
+
+		for (int i = 0; i < node->chil.size(); i++) {
+			postorder(node->chil[i]);
+		}
+		cout << node->data << ' ';
 	}
 };
