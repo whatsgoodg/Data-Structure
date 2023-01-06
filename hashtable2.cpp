@@ -4,8 +4,6 @@ Open addressing + Double hashing
 충돌 시과 탐색은 추가 해시함수를 사용한다.
 Linear probing: (hash1 + 1) % capacity
 Double hashing: (hash1 + hash2) % capacity
-충돌 시 탐색의 횟수가 크기를 넘어가면 예외처리
-insert: key 중복시 값 수정
 
 함수 설명은 hashtable.cpp 참고
 */
