@@ -59,7 +59,7 @@ public:
 		int probe = 1;
 
 		while (table[index].valid != EMPTY && probe <= capacity) {// 비어 있지 않을 경우
-			if (table[index].valid == OCCUP && table[index].key == key) { // entry가 있고 key가 같을 경우
+			if (table[index].key == key && table[index].valid == OCCUP) { // entry가 있고 key가 같을 경우
 				return index;
 			}
 			index = hashFunc(index + 1);
@@ -90,7 +90,7 @@ public:
 		int probe = 1;
 
 		while (table[index].valid != EMPTY && probe <= capacity) { //비어 있지 않을 시
-			if (table[index].valid == OCCUP && table[index].key == key) { //entry가 있고 key가 같을 경우
+			if (table[index].key == key && table[index].valid == OCCUP) { //entry가 있고 key가 같을 경우
 				table[index].erase();
 				return;
 			}
