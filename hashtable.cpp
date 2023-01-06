@@ -13,7 +13,7 @@ insert: key 중복시 값 수정
 조건
 find: if AVAIL && OCCUP: 순회, else && OCCUP && key 동일 시: inex 반환
 insert: OCCUP: 순회, else: 삽입 or 수정
-erase: find와 동일.
+erase: find와 동일.(find로 처리해도 된다.)
 */
 #include <iostream>
 #define EMPTY 0
