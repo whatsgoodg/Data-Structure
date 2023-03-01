@@ -466,7 +466,35 @@ a와 c가 각각 b의 왼쪽, 오른쪽 subtree가 된다.
 >* Restructuring: **`O(log n)`**
              
 <br><br><br>
-# Priority Queue
+# Priority Queue                     
+**`Priority Queue`**란 entry를 저장하는 자료구조이다. 대개 entry는 (key, value) 형태로 사용하며, 우선순위는 key로 정해진다.                
+여기서 **우선순위**란 사용자가 직접 지정한다. 오름차순, 내림차순 또는 임의의 우선순위를 지정할 수 있다.               
+그리고 이 우선순위는 key를 기준으로 값이 삭제될 때 우선순위대로 삭제되는 **Queue**이다.                 
+기본적인 ADT는 다음과 같다.                       
+>* **insert(e)**: e를 저장한다.                 
+>* **removeMin()**: 가장 작은 key를 가진 entry를 삭제한다.                
+>* **min()**: 가장 작은 key를 가진 entry를 반환한다.                 
+>* size(), empty()                   
+                    
+이 우선순위를 위한 custom compare 함수가 필요하다. C++에서 정렬함수는 **`bool cmp(int a, int b)`** 형태로 존재하며 규칙은 다음과 같다.            
+>* 배열을 정렬할 때, compare 함수를 사용한다면 a는 앞쪽, b는 뒷쪽에 위치할 원소이다. 이 함수가 정렬되고 싶은 조건에 true를 반환하게 구현하면 된다.            
+>* 그러나 우선순위 큐는 반대로 구현해야한다. 우선순위가 높은 매개변수가 b이다.                
+>* () 오버로딩을 사용하여 클래스 형태로 compare 함수를 구현한다.              
+                   
+대개 우선순위 큐의 구현 방식은 두 가지이다. "우선순위대로 삽입하느냐" 또는 "우선순위대로 삭제하느냐" 이다.               
+만약 우선순위 큐를 list로 구현한다면 아래와 같이 두 가지 방법이 있을 것이다.                     
+![image](https://user-images.githubusercontent.com/86244920/222130515-368308b1-f59f-49b7-b6ed-305118e7c4a3.png)             
+왼쪽같은 경우 삭제할 때 우선순위를 지키기 때문에 시간복잡도는 O(N)이다. 삽입은 O(1)이다.             
+오른쪽은 반대이다. 삭제 O(1), 삽입 O(N)이다                    
+                     
+이를 이용한 정렬방법인 **`삽입정렬(Selection sort)`** 와 **`선택정렬(Insertion sort)`**가 있다.            
+두 가지중 하나의 우선순위큐와 이를 우선순위대로 삭제하며 다른 자료구조에 값을 저장하며 정렬한다.              
+                    
+하지만 우선순위 큐 안에서 정렬이 가능한 **`In place Insertion sort`**가 존재한다.                
+![image](https://user-images.githubusercontent.com/86244920/222131567-22271698-1060-4200-afc0-da243e374aff.png)              
+위와 같은 방식으로 정렬한다.              
+             
+# Heaps
 
 
 
