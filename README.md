@@ -487,13 +487,14 @@ a와 c가 각각 b의 왼쪽, 오른쪽 subtree가 된다.
 왼쪽같은 경우 삭제할 때 우선순위를 지키기 때문에 시간복잡도는 O(N)이다. 삽입은 O(1)이다.             
 오른쪽은 반대이다. 삭제 O(1), 삽입 O(N)이다                    
                      
-이를 이용한 정렬방법인 **`삽입정렬(Selection sort)`** 와 **`선택정렬(Insertion sort)`**가 있다.            
+이를 이용한 정렬방법인 **`삽입정렬(Selection sort)`** 와 **`선택정렬(Insertion sort)`** 이 있다.            
 두 가지중 하나의 우선순위큐와 이를 우선순위대로 삭제하며 다른 자료구조에 값을 저장하며 정렬한다.              
                     
-하지만 우선순위 큐 안에서 정렬이 가능한 **`In place Insertion sort`**가 존재한다.                
+또한 우선순위 큐 안에서 정렬이 가능한 **`In place Insertion sort`** 가 존재한다.                
 ![image](https://user-images.githubusercontent.com/86244920/222131567-22271698-1060-4200-afc0-da243e374aff.png)              
 위와 같은 방식으로 정렬한다.              
-             
+            
+### [구현코드]()
 # Heaps
 
 
