@@ -494,7 +494,7 @@ a와 c가 각각 b의 왼쪽, 오른쪽 subtree가 된다.
 ![image](https://user-images.githubusercontent.com/86244920/222131567-22271698-1060-4200-afc0-da243e374aff.png)              
 위와 같은 방식으로 정렬한다.              
             
-### [구현코드]()
+~~구현코드는 heap에서만 다룬다.~~
 # Heaps
 
 
